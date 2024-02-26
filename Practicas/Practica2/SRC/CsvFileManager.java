@@ -11,6 +11,9 @@ public class CsvFileManager {
 	private static final String FILENAME_HUESPEDES = "huespedes.csv";
 	private static final String FILENAME_CUARTOS = "cuartos.csv";
 
+	public CsvFileManager() {
+	}
+
 	// Métodos para escribir y leer archivos CSV
 	public static void guardarCSV(String nombreArchivo, List<String[]> datos) {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {

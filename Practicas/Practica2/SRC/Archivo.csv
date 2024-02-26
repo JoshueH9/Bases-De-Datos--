@@ -1,0 +1,12 @@
+Hotel ID,Nombre,Ubicacion,Estrellas
+1,Hotel Ejemplo,Avenida Principal,4
+2,Otro Hotel,Calle Secundaria,3
+
+Huesped ID,Nombre,Edad,Correo
+101,John Doe,30,john@example.com
+102,Jane Smith,25,jane@example.com
+
+Cuarto ID,Hotel ID,Tipo,Precio
+201,1,Suite,200
+202,1,Doble,120
+203,2,Individual,80
