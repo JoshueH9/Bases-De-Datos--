@@ -5,13 +5,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CsvFileManager {
 	private static final String FILENAME_HOTELES = "hoteles.csv";
 	private static final String FILENAME_HUESPEDES = "huespedes.csv";
 	private static final String FILENAME_CUARTOS = "cuartos.csv";
 
-	// Métodos para escribir y leer archivos CSV
 	public static void guardarCSV(String nombreArchivo, List<String[]> datos) {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
 			for (String[] fila : datos) {
@@ -35,6 +35,83 @@ public class CsvFileManager {
 			e.printStackTrace();
 		}
 		return datos;
+	}
+
+	// Crear ID en CSV.
+	public static int generarIdUnico(String nombreArchivo) {
+		List<String[]> datos = leerCSV(nombreArchivo);
+		int maxId = datos.stream()
+			.mapToInt(item -> Integer.parseInt(item[0]))
+			.max()
+			.orElse(0);
+		return maxId + 1;
+	}
+
+	// Metodo para AGREGAR un nuevo dato en CSV.
+	// Se pasa el dato sin ID.
+	public static void agregarDato(String nombreArchivo, String[] nuevoDato) {
+		int idUnico = generarIdUnico(nombreArchivo);
+
+		String[] datoConId = new String[nuevoDato.length + 1];
+		datoConId[0] = String.valueOf(idUnico);
+		System.arraycopy(nuevoDato, 0, datoConId, 1, nuevoDato.length);
+
+		List<String[]> datos = leerCSV(nombreArchivo);
+		datos.add(datoConId);
+		guardarCSV(nombreArchivo, datos);
+	}
+
+	// Metodo para CONSULTAR datos por id en CSV.
+	public static String[] consultarDatos(String nombreArchivo, String id) {
+		List<String[]> datos = leerCSV(nombreArchivo);
+
+		// Encontrar el indice del dato con el ID proporcionado.
+		for (String[] dato : datos) {
+			if (dato[0].equals(id)) {
+				return dato;
+			}
+		}
+		return null;
+	}
+
+	// Metodo para EDITAR un dato en CSV.
+	public static void editarDato(String nombreArchivo, String[] datoEditado, String id) {
+		List<String[]> datos = leerCSV(nombreArchivo);
+
+		// Encontrar el indice del dato con el ID proporcionado.
+		int index = -1;
+		for (int i = 0; i < datos.size(); i++) {
+			if (datos.get(i)[0].equals(id)) {
+				index = i;
+				break;
+			}
+		}
+
+		// Si se encontro el dato, replazarlo con la version editada.
+		if (index != -1) {
+			datos.set(index, datoEditado);
+			guardarCSV(nombreArchivo, datos);
+		}
+	}
+
+	// Metodo para ELIMINAR un dato en CSV.
+	public static void eliminarDato(String nombreArchivo, String id) {
+		List<String[]> datos = leerCSV(nombreArchivo);
+
+		// Encontrar el indice del dato con el ID proporcionado.
+		int index = -1;
+		for (int i = 0; i < datos.size(); i++) {
+			if (datos.get(i)[0].equals(id)) {
+				index = i;
+				break;
+			}
+		}
+
+		// Si se encontro el dato, eliminarlo.
+		if (index != -1) {
+			datos.remove(index);
+			guardarCSV(nombreArchivo, datos);
+		}
 	}
 }
 
