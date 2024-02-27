@@ -8,7 +8,16 @@ import java.util.Scanner;
 import Entidades.Hotel;
 import Entidades.Habitacion;
 
-
+/**
+ * Clase que simula el menu para eliminar informacion.
+ * 
+ * @author Macal Cruz Brandon Brayan - 318085470
+ * @author Pintor Munoz Pedro Joshue - 420053796
+ * @author Rojo Trujillo Alessandro Gael - 317218385
+ * @author Hernandez Morales Jose Angel - 315137903
+ * @version 1.0 febrero 2024
+ * @since Clase de Bases de datos 2024-2
+ */
 public class EliminarInfo implements OpcionMenu {
 
 	@Override
@@ -26,7 +35,7 @@ public class EliminarInfo implements OpcionMenu {
 				menuUno = sc.nextInt();
 
 				switch (menuUno) {
-					case 1: // Hotel
+					case 1: 
 						eliminarHotel(sc);
 						break;
 
@@ -38,8 +47,9 @@ public class EliminarInfo implements OpcionMenu {
 						eliminarHuesped(sc);
 						break;
 
-                    case 4:
+                    case 4: // Solo regresa al menu inicial.
                         break;
+
 					default: // OPCION INVALIDA
                         System.out.println(Color.ROJO + "\nEsa opción no es válida\n");
                         Thread.sleep(1500);
@@ -60,75 +70,17 @@ public class EliminarInfo implements OpcionMenu {
 		int idHotel = 0;
 		do {
 			try {
-
-				System.out.print(Color.AMARILLO
-						+ "\n---------------- Ingresa los datos del hotel ----------------\n");
-				System.out.print(Color.AMARILLO + "\nIngresa el nombre del hotel: "
+				System.out.print(Color.AMARILLO + "\nIngresa el ID del elemento que quieres borrar: "
 						+ Color.VERDE);
-				String nombre = sc.next();
-				System.out.print(Color.AMARILLO + "\nIngresa la calle del hotel: "
-						+ Color.VERDE);
-				String calle = sc.next();
-				System.out.print(
-						Color.AMARILLO + "\nIngresa el numero interior del hotel: "
-								+ Color.VERDE);
-				String numeroInterior = sc.next();
-				System.out.print(
-						Color.AMARILLO + "\nIngresa la numero exterior del hotel: "
-								+ Color.VERDE);
-				String numeroExterior = sc.next();
-				System.out.print(Color.AMARILLO + "\nIngresa la colonia del hotel: "
-						+ Color.VERDE);
-				String colonia = sc.next();
-				System.out.print(Color.AMARILLO
-						+ "\nIngresa el estado del pais donde se encuenta el hotel: "
-						+ Color.VERDE);
-				String estado = sc.next();
-				System.out
-						.print(Color.AMARILLO + "\nIngresa el telefono del hotel: "
-								+ Color.VERDE);
-				int telefono = sc.nextInt();
-				System.out.print(Color.AMARILLO
-						+ "\nIngresa el numero de habitaciones totales del hotel: "
-						+ Color.VERDE);
-				int numHabitaciones = sc.nextInt();
-
-				System.out.print(Color.AMARILLO
-						+ "\nIngresa el numero de habitaciones disponibles del hotel: "
-						+ Color.VERDE);
-				int numHabitacionesDisponibles = sc.nextInt();
-
-				System.out.print(Color.AMARILLO
-						+ "\nIngresa el numero de habitaciones ocupadas del hotel: "
-						+ Color.VERDE);
-				int numHabitacionesOcupadas = sc.nextInt();
-				/*
-				 * 
-				 * public Hotel(int idHotel, String nombreEstablecimiento, String calle, String
-				 * numeroInterior, String numeroExterior,String colonia, String estado,
-				 * List<Integer> telefono, int numHabitaciones, int
-				 * numHabitacionesDisponibles,int numHabitacionesOcupadas)
-				 */
-				Hotel hotel = new Hotel(idHotel++, nombre, calle, numeroInterior, numeroExterior, colonia, estado,
-						telefono,
-						numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
-
-				List<Hotel> hoteles = new ArrayList<>();
-
-				hoteles.add(hotel); // calle,numInteior,etc.
-
-				// agregaDato(algo);
-				/*
-				 * El algo puede ser una lista abstracta
-				 * lista de Strings (Hay que convertir los int a string)
-				 * array de strings (hay que cambiar los int a string)
-				 * O tambien puede ser el objeto directamente, este creo que es el mas
-				 * optimo pero quiza el mas complicado.
-				 */
+				int id = sc.nextInt();
+				
+                /* Aqui nadamas se manda el archivo de donde se va a eliminar y el id del elemento */
+				// eliminaElemento(Hotel.csv, id);
 
 				System.out.println(
-						Color.AZUL + "\nHotel ingresado con exito\n" + Color.BLANCO);
+						Color.AZUL + "\nElemento eliminado con exito\n" + Color.BLANCO);
 				Thread.sleep(1500);
+                error = false;
 			} catch (InputMismatchException ime) {
 				System.out.println(
 						Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);
@@ -141,32 +93,20 @@ public class EliminarInfo implements OpcionMenu {
 
 	private void eliminarHabitacion(Scanner sc) throws InterruptedException {
 		Boolean error = false;
-		int idHabitacion = 0;
+		int idHotel = 0;
 		do {
 			try {
-				System.out.print(Color.AMARILLO
-						+ "\n---------------- Ingresa los datos de la habitacion ----------------\n");
-				System.out.print(Color.AMARILLO + "\nIngresa el nombre del tipo de habitacion: "
+				System.out.print(Color.AMARILLO + "\nIngresa el ID del elemento que quieres borrar: "
 						+ Color.VERDE);
-				String nombreTipo = sc.next();
-				System.out.print(Color.AMARILLO + "\nIngresa el numero de camas de la habitacion: "
-						+ Color.VERDE);
-				int numCamas = sc.nextInt();
-				System.out.print(Color.AMARILLO + "\nIngresa el costo por noche de la habitacion: $"
-						+ Color.VERDE);
-				int costoNoche = sc.nextInt();
-				/*
-				 * public Habitacion(int numHabitacion, String nombreTipo, int numCamas, int
-				 * costoPorNoche, boolean disponible) {
-				 */
-				Habitacion habitacion = new Habitacion(idHabitacion, nombreTipo, numCamas, costoNoche, true);
+				int id = sc.nextInt();
+				
+                /* Aqui nadamas se manda el archivo de donde se va a eliminar y el id del elemento */
+				// eliminaElemento(Habitacion.csv, id);
 
-				List<Habitacion> habitaciones = new ArrayList<>();
-
-				habitaciones.add(habitacion); // calle,numInteior,etc.
 				System.out.println(
-						Color.AZUL + "\nHabitacion ingresada con exito\n" + Color.BLANCO);
+						Color.AZUL + "\nElemento eliminado con exito\n" + Color.BLANCO);
 				Thread.sleep(1500);
+                error = false;
 			} catch (InputMismatchException ime) {
 				System.out.println(
 						Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);
@@ -178,7 +118,29 @@ public class EliminarInfo implements OpcionMenu {
 	}
 
 	private void eliminarHuesped(Scanner sc) throws InterruptedException {
+		Boolean error = false;
+		int idHotel = 0;
+		do {
+			try {
+				System.out.print(Color.AMARILLO + "\nIngresa el ID del elemento que quieres borrar: "
+						+ Color.VERDE);
+				int id = sc.nextInt();
+				
+                /* Aqui nadamas se manda el archivo de donde se va a eliminar y el id del elemento */
+				// eliminaElemento(Huesped.csv, id);
 
+				System.out.println(
+						Color.AZUL + "\nElemento eliminado con exito\n" + Color.BLANCO);
+				Thread.sleep(1500);
+                error = false;
+			} catch (InputMismatchException ime) {
+				System.out.println(
+						Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);
+				Thread.sleep(1500);
+				error = true;
+				sc.nextLine();
+			}
+		} while (error);
 	}
 
 }

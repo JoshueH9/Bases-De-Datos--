@@ -8,7 +8,16 @@ import java.util.Scanner;
 import Entidades.Hotel;
 import Entidades.Habitacion;
 
-
+/**
+ * Clase que simula el menu para consultar elementos en la BD.
+ * 
+ * @author Macal Cruz Brandon Brayan - 318085470
+ * @author Pintor Munoz Pedro Joshue - 420053796
+ * @author Rojo Trujillo Alessandro Gael - 317218385
+ * @author Hernandez Morales Jose Angel - 315137903
+ * @version 1.0 febrero 2024
+ * @since Clase de Bases de datos 2024-2
+ */
 public class ConsultarElementos implements OpcionMenu {
 
 	@Override

@@ -26,7 +26,7 @@ import Menu.OpcionMenu;
  * 
  * @author Macal Cruz Brandon Brayan - 318085470
  * @author Pintor Munoz Pedro Joshue - 420053796
- * @author Color.ROJO Trujillo Alessandro Gael - 317218385
+ * @author Rojo Trujillo Alessandro Gael - 317218385
  * @author Hernandez Morales Jose Angel - 315137903
  * @version 1.0 febrero 2024
  * @since Clase de Bases de datos 2024-2
