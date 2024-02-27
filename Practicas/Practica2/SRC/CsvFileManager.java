@@ -7,14 +7,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+* Clase para manejar archivos csv.
+* @author Macal Cruz Brandon Brayan - 318085470
+* @author Pintor Munoz Pedro Joshue - 420053796
+* @author Rojo Trujillo Alessandro Gael - 317218385
+* @author Hernandez Morales Jose Angel - 315137903
+* @version 1.0 febrero 2024
+* @since Clase de Bases de datos 2024-2
+*/
 public class CsvFileManager {
 	private static final String FILENAME_HOTELES = "hoteles.csv";
 	private static final String FILENAME_HUESPEDES = "huespedes.csv";
 	private static final String FILENAME_CUARTOS = "cuartos.csv";
 
-	public static void guardarCSV(String nombreArchivo, List<String[]> datos) {
+	public static <T> void guardarCSV(String nombreArchivo, List<T> datos) {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
-			for (String[] fila : datos) {
+			for (int i=0; i<datos.size(); i++) {
+				CharSequence fila = "";
 				writer.write(String.join(",", fila));
 				writer.newLine();
 			}
