@@ -14,7 +14,7 @@ import Entidades.Habitacion;
 
 import Menu.AgregarElementos;
 import Menu.ConsultarElementos;
-import Menu.EditarBD;
+import Menu.EditarElementos;
 import Menu.EliminarInfo;
 
 import Menu.Color;
@@ -71,7 +71,7 @@ public class Main {
         int menu = 0;
 
         OpcionMenu[] opciones = {
-                new AgregarElementos(), new ConsultarElementos(), new EditarBD(), new EliminarInfo()
+                new AgregarElementos(), new ConsultarElementos(), new EditarElementos(), new EliminarInfo()
                 // Crear instancias de otras clases según sea necesario
         };
 
@@ -113,9 +113,9 @@ public class Main {
                         break;
 
                     default: // OPCION INVALIDA
-                    System.out.println(Color.ROJO + "\nEsa opción no es válida\n");
-                    Thread.sleep(1500);
-                    menu = 6;
+                        System.out.println(Color.ROJO + "\nEsa opción no es válida\n");
+                        Thread.sleep(1500);
+                        menu = 6;
                         break;
 
                 }
