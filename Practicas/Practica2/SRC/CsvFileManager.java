@@ -8,30 +8,23 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
-* Clase para manejar archivos csv.
-* @author Macal Cruz Brandon Brayan - 318085470
-* @author Pintor Munoz Pedro Joshue - 420053796
-* @author Rojo Trujillo Alessandro Gael - 317218385
-* @author Hernandez Morales Jose Angel - 315137903
-* @version 1.0 febrero 2024
-* @since Clase de Bases de datos 2024-2
-*/
+ * Clase para manejar archivos csv.
+ * 
+ * @author Macal Cruz Brandon Brayan - 318085470
+ * @author Pintor Munoz Pedro Joshue - 420053796
+ * @author Rojo Trujillo Alessandro Gael - 317218385
+ * @author Hernandez Morales Jose Angel - 315137903
+ * @version 1.0 febrero 2024
+ * @since Clase de Bases de datos 2024-2
+ */
 public class CsvFileManager {
 	private static final String FILENAME_HOTELES = "hoteles.csv";
 	private static final String FILENAME_HUESPEDES = "huespedes.csv";
 	private static final String FILENAME_CUARTOS = "cuartos.csv";
 
-<<<<<<< HEAD
 	public static <T> void guardarCSV(String nombreArchivo, List<T> datos) {
-=======
-	public CsvFileManager() {
-	}
-
-	// Métodos para escribir y leer archivos CSV
-	public static void guardarCSV(String nombreArchivo, List<String[]> datos) {
->>>>>>> 933b2ddb80b828fbc392fb3186ca3b4d6da53cff
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
-			for (int i=0; i<datos.size(); i++) {
+			for (int i = 0; i < datos.size(); i++) {
 				CharSequence fila = "";
 				writer.write(String.join(",", fila));
 				writer.newLine();
@@ -146,14 +139,22 @@ public class CsvFileManager {
  * guardarCSV("datos.csv", datosAGuardar);
  * 
  * // Leer desde un archivo CSV
- * List<String[]> datosLeidos = leerCSV("datos.csv");
+ * List<Hotel> hoteles = new ArrayList<>();
+ * List<String[]> datos = new ArrayList<>();
+ * // Cargar datos desde CSV (ejemplo)
+ * // CsvFileManager.loadHoteles(hoteles);
+ * // CsvFileManager.loadHuespedes(huespedes);
+ * // CsvFileManager.loadCuartos(cuartos);
  * 
- * // Imprimir los datos leídos
- * for (String[] fila : datosLeidos) {
+ * datos = CsvFileManager.leerCSV("Practicas/Practica2/SRC/Archivo.csv");
+ * 
+ * Imprimir los datos leídos
+ * for (String[] fila : datos) {
  * for (String valor : fila) {
- * System.out.print(valor + "\t");
+ * System.out.print("+" + valor + "\t");
  * }
  * System.out.println();
+ * }
  * }
  * }
  */
