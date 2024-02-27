@@ -8,6 +8,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
+import Entidades.Hotel;
 import Menu.AgregarElementos;
 import Menu.Color;
 import Menu.OpcionMenu;
@@ -35,11 +36,6 @@ public class Main {
         List<Hotel> hoteles = new ArrayList<>();
 
         // Realizar operaciones (ejemplo)
-        /*
-         * Hotel nuevoHotel = new Hotel(0, null, null, null, null, null, null, null, 0,
-         * 0, 0); /* Datos del nuevo hotel
-         * hoteles.add(nuevoHotel);
-         */
 
         /* Aqui terminan las pruebas de alessandro */
 

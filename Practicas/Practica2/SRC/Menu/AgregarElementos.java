@@ -1,7 +1,10 @@
 package Menu;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
+import Entidades.Hotel;
 
 public class AgregarElementos implements OpcionMenu {
 
@@ -20,84 +23,11 @@ public class AgregarElementos implements OpcionMenu {
 
 				switch (menuUno) {
 					case 1: // Hotel
-
-						Boolean error = false;
-						do {
-							try {
-								System.out.print(Color.AMARILLO
-										+ "\n---------------- Ingresa los datos del hotel ----------------\n");
-								System.out.print(Color.AMARILLO + "\nIngresa el nombre del hotel: "
-										+ Color.VERDE);
-								String nombre = sc.next();
-								System.out.print(Color.AMARILLO + "\nIngresa la calle del hotel: "
-										+ Color.VERDE);
-								String calle = sc.next();
-								System.out.print(
-										Color.AMARILLO + "\nIngresa el numero interior del hotel: "
-												+ Color.VERDE);
-								int numeroInterior = sc.nextInt();
-								System.out.print(
-										Color.AMARILLO + "\nIngresa la numero exterior del hotel: "
-												+ Color.VERDE);
-								int numeroExterior = sc.nextInt();
-								System.out.print(Color.AMARILLO + "\nIngresa la colonia del hotel: "
-										+ Color.VERDE);
-								String colonia = sc.next();
-								System.out.print(Color.AMARILLO
-										+ "\nIngresa el estado del pais donde se encuenta el hotel: "
-										+ Color.VERDE);
-								String estado = sc.next();
-								System.out
-										.print(Color.AMARILLO + "\nIngresa el telefono del hotel: "
-												+ Color.VERDE);
-								int telefono = sc.nextInt();
-								System.out.print(Color.AMARILLO
-										+ "\nIngresa el numero de habitaciones totales del hotel: "
-										+ Color.VERDE);
-								int numHabitaciones = sc.nextInt();
-
-								// List<T> hotel = new ArrayList<>(); ESTO PUEDE SER <t> es decir
-								// abstracto o <String>
-								// Tambien no tiene por que ser lista sino podemos hacer arreglo
-								// String[] nadamas que no se
-								// si arreglo se pueda hacer abstracto (creo que no)
-
-								// hotel.add(nombre)... calle,numInteior,etc.
-
-								// OPCION 1. Cuando llenamos la lista/arreglo, lo podemos mandar como
-								// atributo al metodo para agregar.
-
-								// OPCION 2. En vez de crear una lista manejamos directamente los
-								// objetos, es decir, en vez de hacer una lista,
-								// mandamos el objeto como tal. de igual manera hay que enviarlo al
-								// método
-
-								// agregaDato(algo);
-								/*
-								 * El algo puede ser una lista abstracta
-								 * lista de Strings (Hay que convertir los int a string)
-								 * array de strings (hay que cambiar los int a string)
-								 * O tambien puede ser el objeto directamente, este creo que es el mas
-								 * optimo pero quiza el mas complicado.
-								 */
-
-								error = false;
-								System.out.println(
-										Color.AZUL + "\nHotel ingresado con exito\n" + Color.BLANCO);
-								Thread.sleep(1500);
-							} catch (InputMismatchException ime) {
-								System.out.println(
-										Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);
-								Thread.sleep(1500);
-								error = true;
-								sc.nextLine();
-							}
-						} while (error);
-
+						agregarHotel(sc);
 						break;
 
 					case 2:
-
+						agregarHabitacion(sc);
 						break;
 
 					case 3:
@@ -114,5 +44,93 @@ public class AgregarElementos implements OpcionMenu {
 				sc.nextLine();
 			}
 		} while (menuUno != 4);
+	}
+
+	private void agregarHotel(Scanner sc) throws InterruptedException {
+		Boolean error = false;
+		int idHotel = 0;
+		do {
+			try {
+
+				System.out.print(Color.AMARILLO
+						+ "\n---------------- Ingresa los datos del hotel ----------------\n");
+				System.out.print(Color.AMARILLO + "\nIngresa el nombre del hotel: "
+						+ Color.VERDE);
+				String nombre = sc.next();
+				System.out.print(Color.AMARILLO + "\nIngresa la calle del hotel: "
+						+ Color.VERDE);
+				String calle = sc.next();
+				System.out.print(
+						Color.AMARILLO + "\nIngresa el numero interior del hotel: "
+								+ Color.VERDE);
+				String numeroInterior = sc.next();
+				System.out.print(
+						Color.AMARILLO + "\nIngresa la numero exterior del hotel: "
+								+ Color.VERDE);
+				String numeroExterior = sc.next();
+				System.out.print(Color.AMARILLO + "\nIngresa la colonia del hotel: "
+						+ Color.VERDE);
+				String colonia = sc.next();
+				System.out.print(Color.AMARILLO
+						+ "\nIngresa el estado del pais donde se encuenta el hotel: "
+						+ Color.VERDE);
+				String estado = sc.next();
+				System.out
+						.print(Color.AMARILLO + "\nIngresa el telefono del hotel: "
+								+ Color.VERDE);
+				int telefono = sc.nextInt();
+				System.out.print(Color.AMARILLO
+						+ "\nIngresa el numero de habitaciones totales del hotel: "
+						+ Color.VERDE);
+				int numHabitaciones = sc.nextInt();
+
+				System.out.print(Color.AMARILLO
+						+ "\nIngresa el numero de habitaciones disponibles del hotel: "
+						+ Color.VERDE);
+				int numHabitacionesDisponibles = sc.nextInt();
+
+				System.out.print(Color.AMARILLO
+						+ "\nIngresa el numero de habitaciones ocupadas del hotel: "
+						+ Color.VERDE);
+				int numHabitacionesOcupadas = sc.nextInt();
+				/*
+				 * 
+				 * public Hotel(int idHotel, String nombreEstablecimiento, String calle, String
+				 * numeroInterior, String numeroExterior,String colonia, String estado,
+				 * List<Integer> telefono, int numHabitaciones, int
+				 * numHabitacionesDisponibles,int numHabitacionesOcupadas)
+				 */
+				Hotel hotel = new Hotel(idHotel++, nombre, calle, numeroInterior, numeroExterior, colonia, estado,
+						telefono,
+						numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
+
+				List<Hotel> hoteles = new ArrayList<>();
+
+				hoteles.add(hotel); // calle,numInteior,etc.
+
+				// agregaDato(algo);
+				/*
+				 * El algo puede ser una lista abstracta
+				 * lista de Strings (Hay que convertir los int a string)
+				 * array de strings (hay que cambiar los int a string)
+				 * O tambien puede ser el objeto directamente, este creo que es el mas
+				 * optimo pero quiza el mas complicado.
+				 */
+
+				System.out.println(
+						Color.AZUL + "\nHotel ingresado con exito\n" + Color.BLANCO);
+				Thread.sleep(1500);
+			} catch (InputMismatchException ime) {
+				System.out.println(
+						Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);
+				Thread.sleep(1500);
+				error = true;
+				sc.nextLine();
+			}
+		} while (error);
+	}
+
+	private void agregarHabitacion(Scanner sc) {
+
 	}
 }

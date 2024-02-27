@@ -1,3 +1,5 @@
+package Entidades;
+
 import java.util.List;
 
 /**
@@ -35,7 +37,7 @@ public class Hotel {
 	private String estado;
 
 	/* Numeros de telefono del hotel */
-	private List<Integer> telefono;
+	private int telefono;
 
 	/* Numero de habitaciones totales del hotel */
 	private int numHabitaciones;
@@ -63,7 +65,7 @@ public class Hotel {
 	 * @param numHabitacionesOcupadas    Numero de habitaciones ocupadas del hotel
 	 */
 	public Hotel(int idHotel, String nombreEstablecimiento, String calle, String numeroInterior, String numeroExterior,
-			String colonia, String estado, List<Integer> telefono, int numHabitaciones, int numHabitacionesDisponibles,
+			String colonia, String estado, int telefono, int numHabitaciones, int numHabitacionesDisponibles,
 			int numHabitacionesOcupadas) {
 		this.idHotel = idHotel;
 		this.nombreEstablecimiento = nombreEstablecimiento;
@@ -148,7 +150,7 @@ public class Hotel {
 	 * 
 	 * @return los telefonos del hotel.
 	 */
-	public List<Integer> getTelefonos() {
+	public int getTelefono() {
 		return telefono;
 	}
 
@@ -240,7 +242,7 @@ public class Hotel {
 	 * 
 	 * @param telefono
 	 */
-	public void setTelefonos(List<Integer> telefono) {
+	public void setTelefonos(int telefono) {
 		this.telefono = telefono;
 	}
 
