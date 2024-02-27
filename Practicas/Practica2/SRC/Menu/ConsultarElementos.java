@@ -108,41 +108,41 @@ public class ConsultarElementos implements OpcionMenu {
 
 				if (hotelEncontrado.isPresent()) {
 					Hotel hotelConsultado = hotelEncontrado.get();
-					System.out.println(Color.AZUL + "\"\\n" + //
-							"---------------- Hotel encontrado ----------------\\n" + //
-							"\"" + Color.BLANCO);
+					System.out.println(Color.AZUL + "\n" + //
+							"---------------- Hotel encontrado ----------------\n" //
+							+ Color.BLANCO);
 					System.out
-							.println(Color.AMARILLO + "\nId del hotel: " + Color.VERDE + hotelConsultado.getIdHotel());
-					System.out.println(Color.AMARILLO + "\nNombre del hotel: " + Color.VERDE
+							.println(Color.AZUL + "\nId del hotel: " + Color.BLANCO + hotelConsultado.getIdHotel());
+					System.out.println(Color.AZUL + "\nNombre del hotel: " + Color.BLANCO
 							+ hotelConsultado.getNombreEstablecimiento());
 
-					System.out.print(Color.AMARILLO + "\nCalle del hotel: "
-							+ Color.VERDE + hotelConsultado.getCalle());
+					System.out.print(Color.AZUL + "\nCalle del hotel: "
+							+ Color.BLANCO + hotelConsultado.getCalle());
 					System.out.print(
-							Color.AMARILLO + "\nNumero interior del hotel: "
-									+ Color.VERDE + hotelConsultado.getNumeroInterior());
+							Color.AZUL + "\nNumero interior del hotel: "
+									+ Color.BLANCO + hotelConsultado.getNumeroInterior());
 					System.out.print(
-							Color.AMARILLO + "\nNumero exterior del hotel: "
-									+ Color.VERDE + hotelConsultado.getNumeroExterior());
-					System.out.print(Color.AMARILLO + "\nColonia del hotel: "
-							+ Color.VERDE + hotelConsultado.getColonia());
-					System.out.print(Color.AMARILLO
+							Color.AZUL + "\nNumero exterior del hotel: "
+									+ Color.BLANCO + hotelConsultado.getNumeroExterior());
+					System.out.print(Color.AZUL + "\nColonia del hotel: "
+							+ Color.BLANCO + hotelConsultado.getColonia());
+					System.out.print(Color.AZUL
 							+ "\nEstado del pais el hotel: "
-							+ Color.VERDE + hotelConsultado.getEstado());
+							+ Color.BLANCO + hotelConsultado.getEstado());
 					System.out
-							.print(Color.AMARILLO + "\nTelefono del hotel: "
-									+ Color.VERDE + hotelConsultado.getTelefono());
-					System.out.print(Color.AMARILLO
+							.print(Color.AZUL + "\nTelefono del hotel: "
+									+ Color.BLANCO + hotelConsultado.getTelefono());
+					System.out.print(Color.AZUL
 							+ "\nNumero de habitaciones totales del hotel: "
-							+ Color.VERDE + hotelConsultado.getNumHabitaciones());
+							+ Color.BLANCO + hotelConsultado.getNumHabitaciones());
 
-					System.out.print(Color.AMARILLO
+					System.out.print(Color.AZUL
 							+ "\nNumero de habitaciones disponibles del hotel: "
-							+ Color.VERDE + hotelConsultado.getNumHabitacionesDisponibles());
+							+ Color.BLANCO + hotelConsultado.getNumHabitacionesDisponibles());
 
-					System.out.print(Color.AMARILLO
+					System.out.print(Color.AZUL
 							+ "\nNumero de habitaciones ocupadas del hotel: "
-							+ Color.VERDE + hotelConsultado.getNumHabitacionesOcupadas());
+							+ Color.BLANCO + hotelConsultado.getNumHabitacionesOcupadas());
 					Thread.sleep(1500);
 				} else {
 					throw new IllegalStateException();
@@ -173,21 +173,21 @@ public class ConsultarElementos implements OpcionMenu {
 
 				if (habitacionEncontrada.isPresent()) {
 					Habitacion habitacionConsultada = habitacionEncontrada.get();
-					System.out.println(Color.AZUL + "\"\\n" + //
-							"---------------- Habitacion encontrada ----------------\\n" + //
-							"\"" + Color.BLANCO);
+					System.out.println(Color.AZUL + "\n" + //
+							"---------------- Habitacion encontrada ----------------\n" + //
+							Color.BLANCO);
 					System.out
-							.println(Color.AMARILLO + "\nNumero de habitacion: " + Color.VERDE
+							.println(Color.AZUL + "\nNumero de habitacion: " + Color.BLANCO
 									+ habitacionConsultada.getNumHabitacion());
-					System.out.println(Color.AMARILLO + "\nNombre del tipo de habitacion: " + Color.VERDE
+					System.out.println(Color.AZUL + "\nNombre del tipo de habitacion: " + Color.BLANCO
 							+ habitacionConsultada.getNombreTipo());
 
-					System.out.print(Color.AMARILLO + "\nNumero de camas de la habitacion: "
-							+ Color.VERDE + habitacionConsultada.getNumCamas());
+					System.out.print(Color.AZUL + "\nNumero de camas de la habitacion: "
+							+ Color.BLANCO + habitacionConsultada.getNumCamas());
 					System.out.print(
-							Color.AMARILLO + "\nCosto por noche de la habitacion: "
-									+ Color.VERDE + habitacionConsultada.getCostoPorNoche());
-					System.out.println(Color.AMARILLO + "\nDisponibilidad de la habitacion: "
+							Color.AZUL + "\nCosto por noche de la habitacion: "
+									+ Color.BLANCO + habitacionConsultada.getCostoPorNoche());
+					System.out.println(Color.AZUL + "\nDisponibilidad de la habitacion: "
 							+ (habitacionConsultada.isDisponible() ? "DISPONIBLE" : "NO DISPONIBLE"));
 					Thread.sleep(1500);
 				} else {
@@ -220,31 +220,31 @@ public class ConsultarElementos implements OpcionMenu {
 
 				if (huespedEncontrado.isPresent()) {
 					Huesped huespedConsultado = huespedEncontrado.get();
-					System.out.println(Color.AZUL + "\"\\n" + //
-							"---------------- Huesped encontrado ----------------\\n" + //
-							"\"" + Color.BLANCO);
+					System.out.println(Color.AZUL + "\n" + //
+							"---------------- Huesped encontrado ----------------\n" + //
+							Color.BLANCO);
 					System.out
-							.println(Color.AMARILLO + "\nNumero de huesped: " + Color.VERDE
+							.println(Color.AZUL + "\nNumero de huesped: " + Color.BLANCO
 									+ huespedConsultado.getIdHuesped());
-					System.out.println(Color.AMARILLO + "\nNombre completo del huesped: " + Color.VERDE
+					System.out.println(Color.AZUL + "\nNombre completo del huesped: " + Color.BLANCO
 							+ huespedConsultado.getNombre() + " " + huespedConsultado.getApellidoPaterno() + " "
 							+ huespedConsultado.getApellidoMaterno());
-					System.out.print(Color.AMARILLO + "\nNacionalidad del huesped: "
-							+ Color.VERDE + huespedConsultado.getNacionalidad());
+					System.out.print(Color.AZUL + "\nNacionalidad del huesped: "
+							+ Color.BLANCO + huespedConsultado.getNacionalidad());
 					System.out.print(
-							Color.AMARILLO + "\nFecha de nacimiento del huesped: "
-									+ Color.VERDE + huespedConsultado.getFechaNacimiento());
+							Color.AZUL + "\nFecha de nacimiento del huesped: "
+									+ Color.BLANCO + huespedConsultado.getFechaNacimiento());
 					System.out.println(
-							Color.AMARILLO + "\nGenero del huesped: " + Color.VERDE + huespedConsultado.getGenero());
+							Color.AZUL + "\nGenero del huesped: " + Color.BLANCO + huespedConsultado.getGenero());
 					System.out.print(
-							Color.AMARILLO + "\nNumero de membresia del huesped: "
-									+ Color.VERDE + huespedConsultado.getNumeroMembresia());
+							Color.AZUL + "\nNumero de membresia del huesped: "
+									+ Color.BLANCO + huespedConsultado.getNumeroMembresia());
 					System.out.print(
-							Color.AMARILLO + "\nCorreo del huesped: "
-									+ Color.VERDE + huespedConsultado.getCorreos());
+							Color.AZUL + "\nCorreo del huesped: "
+									+ Color.BLANCO + huespedConsultado.getCorreos());
 					System.out.print(
-							Color.AMARILLO + "\nTelefono del huesped: "
-									+ Color.VERDE + huespedConsultado.getTelefonos());
+							Color.AZUL + "\nTelefono del huesped: "
+									+ Color.BLANCO + huespedConsultado.getTelefonos());
 					Thread.sleep(1500);
 				} else {
 					throw new IllegalStateException();
