@@ -5,6 +5,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import Entidades.Hotel;
+import Entidades.Habitacion;
 
 public class AgregarElementos implements OpcionMenu {
 
@@ -31,7 +32,7 @@ public class AgregarElementos implements OpcionMenu {
 						break;
 
 					case 3:
-
+						agregarHuesped(sc);
 						break;
 
 					default:
@@ -130,7 +131,46 @@ public class AgregarElementos implements OpcionMenu {
 		} while (error);
 	}
 
-	private void agregarHabitacion(Scanner sc) {
+	private void agregarHabitacion(Scanner sc) throws InterruptedException {
+		Boolean error = false;
+		int idHabitacion = 0;
+		do {
+			try {
+				System.out.print(Color.AMARILLO
+						+ "\n---------------- Ingresa los datos de la habitacion ----------------\n");
+				System.out.print(Color.AMARILLO + "\nIngresa el nombre del tipo de habitacion: "
+						+ Color.VERDE);
+				String nombreTipo = sc.next();
+				System.out.print(Color.AMARILLO + "\nIngresa el numero de camas de la habitacion: "
+						+ Color.VERDE);
+				int numCamas = sc.nextInt();
+				System.out.print(Color.AMARILLO + "\nIngresa el costo por noche de la habitacion: $"
+						+ Color.VERDE);
+				int costoNoche = sc.nextInt();
+				/*
+				 * public Habitacion(int numHabitacion, String nombreTipo, int numCamas, int
+				 * costoPorNoche, boolean disponible) {
+				 */
+				Habitacion habitacion = new Habitacion(idHabitacion, nombreTipo, numCamas, costoNoche, true);
+
+				List<Habitacion> habitaciones = new ArrayList<>();
+
+				habitaciones.add(habitacion); // calle,numInteior,etc.
+				System.out.println(
+						Color.AZUL + "\nHabitacion ingresada con exito\n" + Color.BLANCO);
+				Thread.sleep(1500);
+			} catch (InputMismatchException ime) {
+				System.out.println(
+						Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);
+				Thread.sleep(1500);
+				error = true;
+				sc.nextLine();
+			}
+		} while (error);
+	}
+
+	private void agregarHuesped(Scanner sc) throws InterruptedException {
 
 	}
+
 }
