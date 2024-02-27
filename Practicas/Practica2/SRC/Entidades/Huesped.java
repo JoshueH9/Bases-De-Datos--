@@ -1,25 +1,28 @@
+package Entidades;
+
 import java.util.List;
 
 /**
-* Representacion de un huesped de hotel
-* @author Macal Cruz Brandon Brayan - 318085470
-* @author Pintor Munoz Pedro Joshue - 420053796
-* @author Rojo Trujillo Alessandro Gael - 317218385
-* @author Hernandez Morales Jose Angel - 315137903
-* @version 1.0 febrero 2024
-* @since Clase de Bases de datos 2024-2
-*/
+ * Representacion de un huesped de hotel
+ * 
+ * @author Macal Cruz Brandon Brayan - 318085470
+ * @author Pintor Munoz Pedro Joshue - 420053796
+ * @author Rojo Trujillo Alessandro Gael - 317218385
+ * @author Hernandez Morales Jose Angel - 315137903
+ * @version 1.0 febrero 2024
+ * @since Clase de Bases de datos 2024-2
+ */
 public class Huesped {
-	
+
 	/* Numero identificador del cliente (Identificador) */
 	private int idHuesped;
-	
+
 	/* Nombre del huesped */
 	private String nombre;
 
 	/* Apellido paterno del huesped */
 	private String apellidoPaterno;
-	
+
 	/* Apellido materno del huesped */
 	private String apellidoMaterno;
 
@@ -36,27 +39,28 @@ public class Huesped {
 	private int numeroMembresia;
 
 	/* Correos electronicos del huesped */
-	private List<String> correo;
+	private String correo;
 
 	/* Numeros de telefono del huesped */
-	private List<Integer> telefono;
+	private int telefono;
 
-	/** 
-	 * Constructor de un Huesped 
-	 * @param idHuesped Identificador del cliente
-	 * @param nombre Nombre del huesped
+	/**
+	 * Constructor de un Huesped
+	 * 
+	 * @param idHuesped       Identificador del cliente
+	 * @param nombre          Nombre del huesped
 	 * @param apellidoPaterno Apellido paterno del huesped
 	 * @param apellidoMaterno Apellido materno del huesped
-	 * @param nacionalidad Nacionalidad del huesped
+	 * @param nacionalidad    Nacionalidad del huesped
 	 * @param fechaNacimiento Fecha de nacimiento del huesped
-	 * @param genero Genero del huesped
+	 * @param genero          Genero del huesped
 	 * @param numeroMembresia Membresia del huesped (0 en caso de no tener)
-	 * @param correo Correos electronicos del huesped
-	 * @param telefono Lista de telefonos del huesped
-	*/
+	 * @param correo          Correos electronicos del huesped
+	 * @param telefono        Lista de telefonos del huesped
+	 */
 	public Huesped(int idHuesped, String nombre, String apellidoPaterno, String apellidoMaterno, String nacionalidad,
-			String fechaNacimiento, String genero, int numeroMembresia, List<String> correo,
-			List<Integer> telefono) {
+			String fechaNacimiento, String genero, int numeroMembresia, String correo,
+			int telefono) {
 		this.idHuesped = idHuesped;
 		this.nombre = nombre;
 		this.apellidoPaterno = apellidoPaterno;
@@ -73,6 +77,7 @@ public class Huesped {
 
 	/**
 	 * Regresa el identificador del huesped.
+	 * 
 	 * @return el identificador del huesped.
 	 */
 	public int getIdHuesped() {
@@ -81,6 +86,7 @@ public class Huesped {
 
 	/**
 	 * Regresa el nombre del huesped.
+	 * 
 	 * @return el nombre del huesped.
 	 */
 	public String getNombre() {
@@ -89,6 +95,7 @@ public class Huesped {
 
 	/**
 	 * Regresa el apellido paterno del huesped.
+	 * 
 	 * @return el apellido paterno del huesped.
 	 */
 	public String getApellidoPaterno() {
@@ -97,6 +104,7 @@ public class Huesped {
 
 	/**
 	 * Regresa el apellido materno del huesped.
+	 * 
 	 * @return el apellido materno del huesped.
 	 */
 	public String getApellidoMaterno() {
@@ -105,6 +113,7 @@ public class Huesped {
 
 	/**
 	 * Regresa la nacionalidad del huesped.
+	 * 
 	 * @return la nacionalidad del huesped.
 	 */
 	public String getNacionalidad() {
@@ -113,6 +122,7 @@ public class Huesped {
 
 	/**
 	 * Regresa la fecha de nacimiento del huesped.
+	 * 
 	 * @return la fecha de nacimiento del huesped.
 	 */
 	public String getFechaNacimiento() {
@@ -121,6 +131,7 @@ public class Huesped {
 
 	/**
 	 * Regresa el genero del huesped.
+	 * 
 	 * @return el genero del huesped.
 	 */
 	public String getGenero() {
@@ -129,6 +140,7 @@ public class Huesped {
 
 	/**
 	 * Regresa el número de membresia del huesped.
+	 * 
 	 * @return el número de membresia del huesped.
 	 */
 	public int getNumeroMembresia() {
@@ -137,17 +149,19 @@ public class Huesped {
 
 	/**
 	 * Regresa la lista de correos del huesped.
+	 * 
 	 * @return la lista de correos del huesped.
 	 */
-	public List<String> getCorreos() {
+	public String getCorreos() {
 		return correo;
 	}
 
 	/**
 	 * Regresa la lista de telefonos del huesped.
+	 * 
 	 * @return la lista de telefonos del huesped.
 	 */
-	public List<Integer> getTelefonos() {
+	public int getTelefonos() {
 		return telefono;
 	}
 
@@ -155,6 +169,7 @@ public class Huesped {
 
 	/**
 	 * Modifica el nombre del huesped
+	 * 
 	 * @param nombre
 	 */
 	public void setNombre(String nombre) {
@@ -163,6 +178,7 @@ public class Huesped {
 
 	/**
 	 * Modifica el apellido paterno del huesped
+	 * 
 	 * @param apellidoPaterno
 	 */
 	public void setApellidoPaterno(String apellidoPaterno) {
@@ -171,6 +187,7 @@ public class Huesped {
 
 	/**
 	 * Modifica el apellido materno del huesped
+	 * 
 	 * @param apellidoMaterno
 	 */
 	public void setApellidoMaterno(String apellidoMaterno) {
@@ -183,6 +200,7 @@ public class Huesped {
 
 	/**
 	 * Modifica la nacionalidad del huesped
+	 * 
 	 * @param nacionalidad
 	 */
 	public void setNacionalidad(String nacionalidad) {
@@ -191,6 +209,7 @@ public class Huesped {
 
 	/**
 	 * Modifica el genero del huesped
+	 * 
 	 * @param genero
 	 */
 	public void setGenero(String genero) {
@@ -199,6 +218,7 @@ public class Huesped {
 
 	/**
 	 * Modifica el numero de membresia del huesped
+	 * 
 	 * @param numeroMembresia
 	 */
 	public void setNumeroMembresia(int numeroMembresia) {
@@ -207,17 +227,19 @@ public class Huesped {
 
 	/**
 	 * Modifica la lista de correos del huesped
+	 * 
 	 * @param correo
 	 */
-	public void setCorreos(List<String> correo) {
+	public void setCorreos(String correo) {
 		this.correo = correo;
 	}
 
 	/**
 	 * Modifica la lista de telefonos del huesped
+	 * 
 	 * @param telefono
 	 */
-	public void setTelefonos(List<Integer> telefono) {
+	public void setTelefonos(int telefono) {
 		this.telefono = telefono;
 	}
 }
