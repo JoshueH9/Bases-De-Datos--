@@ -113,9 +113,9 @@ public class Main {
                         break;
 
                     default: // OPCION INVALIDA
-                        System.out.println(Color.ROJO + "\nEsa opción no es válida\n");
-                        Thread.sleep(1500);
-                        menu = 6;
+                    System.out.println(Color.ROJO + "\nEsa opción no es válida\n");
+                    Thread.sleep(1500);
+                    menu = 6;
                         break;
 
                 }

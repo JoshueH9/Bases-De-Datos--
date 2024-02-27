@@ -17,28 +17,33 @@ public class EliminarInfo implements OpcionMenu {
 		do {
 			try {
 				System.out.println(Color.VERDE + "\nElije una de las siguientes opciones:\n\n "
-						+ Color.AMARILLO + "1) " + Color.VERDE + "Agregar hotel.\n "
-						+ Color.AMARILLO + "2) " + Color.VERDE + "Agregar Habitacion.\n "
-						+ Color.AMARILLO + "3) " + Color.VERDE + "Agregar Huesped.\n\n "
-						+ Color.AMARILLO + "4) " + Color.VERDE + "Salir del menú.");
+						+ Color.AMARILLO + "1) " + Color.VERDE + "Eliminar hotel.\n "
+						+ Color.AMARILLO + "2) " + Color.VERDE + "Eliminar Habitacion.\n "
+						+ Color.AMARILLO + "3) " + Color.VERDE + "Eliminar Huesped.\n\n "
+						+ Color.AMARILLO + "4) " + Color.VERDE + "Salir al menú inicial.");
 
 				System.out.print(Color.AMARILLO + "\n Opcion: ");
 				menuUno = sc.nextInt();
 
 				switch (menuUno) {
 					case 1: // Hotel
-						agregarHotel(sc);
+						eliminarHotel(sc);
 						break;
 
 					case 2:
-						agregarHabitacion(sc);
+						eliminarHabitacion(sc);
 						break;
 
 					case 3:
-						agregarHuesped(sc);
+						eliminarHuesped(sc);
 						break;
 
-					default:
+                    case 4:
+                        break;
+					default: // OPCION INVALIDA
+                        System.out.println(Color.ROJO + "\nEsa opción no es válida\n");
+                        Thread.sleep(1500);
+                        menuUno = 6;
 						break;
 				}
 
@@ -50,7 +55,7 @@ public class EliminarInfo implements OpcionMenu {
 		} while (menuUno != 4);
 	}
 
-	private void agregarHotel(Scanner sc) throws InterruptedException {
+	private void eliminarHotel(Scanner sc) throws InterruptedException {
 		Boolean error = false;
 		int idHotel = 0;
 		do {
@@ -134,7 +139,7 @@ public class EliminarInfo implements OpcionMenu {
 		} while (error);
 	}
 
-	private void agregarHabitacion(Scanner sc) throws InterruptedException {
+	private void eliminarHabitacion(Scanner sc) throws InterruptedException {
 		Boolean error = false;
 		int idHabitacion = 0;
 		do {
@@ -172,7 +177,7 @@ public class EliminarInfo implements OpcionMenu {
 		} while (error);
 	}
 
-	private void agregarHuesped(Scanner sc) throws InterruptedException {
+	private void eliminarHuesped(Scanner sc) throws InterruptedException {
 
 	}
 

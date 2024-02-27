@@ -21,7 +21,7 @@ public class AgregarElementos implements OpcionMenu {
 						+ Color.AMARILLO + "1) " + Color.VERDE + "Agregar hotel.\n "
 						+ Color.AMARILLO + "2) " + Color.VERDE + "Agregar Habitacion.\n "
 						+ Color.AMARILLO + "3) " + Color.VERDE + "Agregar Huesped.\n\n "
-						+ Color.AMARILLO + "4) " + Color.VERDE + "Salir del menú.");
+						+ Color.AMARILLO + "4) " + Color.VERDE + "Salir al menú inicial.");
 
 				System.out.print(Color.AMARILLO + "\n Opcion: ");
 				menuUno = sc.nextInt();
