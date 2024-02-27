@@ -9,7 +9,7 @@ import Entidades.Hotel;
 import Entidades.Habitacion;
 
 
-public class AgregarElementos implements OpcionMenu {
+public class EditarBD implements OpcionMenu {
 
 	@Override
 	public void ejecutar(Scanner sc) throws InterruptedException {

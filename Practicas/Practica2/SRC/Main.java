@@ -9,7 +9,14 @@ import java.util.List;
 import java.util.Scanner;
 
 import Entidades.Hotel;
+import Entidades.Huesped;
+import Entidades.Habitacion;
+
 import Menu.AgregarElementos;
+import Menu.ConsultarElementos;
+import Menu.EditarBD;
+import Menu.EliminarInfo;
+
 import Menu.Color;
 import Menu.OpcionMenu;
 
@@ -64,7 +71,7 @@ public class Main {
         int menu = 0;
 
         OpcionMenu[] opciones = {
-                new AgregarElementos(),
+                new AgregarElementos(), new ConsultarElementos(), new EditarBD(), new EliminarInfo()
                 // Crear instancias de otras clases según sea necesario
         };
 
@@ -90,15 +97,15 @@ public class Main {
                         break;
 
                     case 2: // CONSULTAR BASE DE DATOS
-
+                        opciones[1].ejecutar(sc);
                         break;
 
                     case 3: // EDITAR BASE DE DATOS
-
+                        opciones[2].ejecutar(sc);
                         break;
 
                     case 4: // ELIMINAR INFORMACION
-
+                        opciones[3].ejecutar(sc);
                         break;
 
                     case 5: // SALIDA DEL MENU
