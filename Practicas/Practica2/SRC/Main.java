@@ -20,24 +20,15 @@ import java.util.Scanner;
  * @since Clase de Bases de datos 2024-2
  */
 public class Main {
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
     /* Ruta de carpetas donde se encuentran los archivos .csv */
     public static final String rutaAbsoluta = "SRC/Doc/";
 
     public static <T> void main(String[] args) throws InterruptedException {
-        CsvFileManager file = new CsvFileManager();
-        List<T> a = new ArrayList<>();
 
-        String[] xd = {"a","b","d"};
-
-        CsvFileManager.guardarCSV(rutaAbsoluta+"Huesped.csv", a); 
-        CsvFileManager.agregarDato(rutaAbsoluta+"Huesped.csv", xd);
+        /* Aqui inician las pruebas de Alessandro */
         
-        menu();
-
-=======
-    public static void main(String[] args) {
         // Ejemplo de uso
         List<Hotel> hoteles = new ArrayList<>();
         List<String[]> datos = new ArrayList<>();
@@ -59,7 +50,29 @@ public class Main {
         // Realizar operaciones (ejemplo)
         Hotel nuevoHotel = new Hotel(0, null, null, null, null, null, null, null, 0, 0, 0);/* Datos del nuevo hotel */
         hoteles.add(nuevoHotel);
->>>>>>> 933b2ddb80b828fbc392fb3186ca3b4d6da53cff
+
+        
+        /* Aqui terminan las pruebas de alessandro */
+
+
+        // Descomentar lo siguiente si se quiere hacer pruebas
+        
+        //CsvFileManager file = new CsvFileManager();
+        //List<T> a = new ArrayList<>();
+
+        //String[] xd = {"a","b","d"};
+
+        //CsvFileManager.guardarCSV(rutaAbsoluta+"Huesped.csv", a); 
+        //CsvFileManager.agregarDato(rutaAbsoluta+"Huesped.csv", xd);
+
+        /* AQUI SE MANDA A LLAMAR EL MENU, DESCOMENTAR SI SE QUIERE UTILIZAR O PROBAR COSAS */
+        
+        //menu();
+
+//=======
+
+        
+//>>>>>>> 933b2ddb80b828fbc392fb3186ca3b4d6da53cff
 
     }
 
