@@ -20,9 +20,9 @@ import Entidades.Habitacion;
  * @since Clase de Bases de datos 2024-2
  */
 public class ConsultarElementos implements OpcionMenu {
-	int idHotel = 0;
+	int idHotel = 1;
 	int idHabitacion = 0;
-	Hotel hotel1 = new Hotel(idHotel++, null, null, null, null, null, null, 0, 0, 0, 0);
+	Hotel hotel1 = new Hotel(idHotel++, "Hotel1", "calle1", null, null, null, null, 0, 0, 0, 0);
 	Hotel hotel2 = new Hotel(idHotel++, null, null, null, null, null, null, 0, 0, 0, 0);
 	Hotel hotel3 = new Hotel(idHotel++, null, null, null, null, null, null, 0, 0, 0, 0);
 	List<Hotel> hoteles = new ArrayList<Hotel>();
@@ -47,7 +47,7 @@ public class ConsultarElementos implements OpcionMenu {
 
 				switch (menuUno) {
 					case 1: // Hotel
-						consultarHotel(sc);
+						consultarHotel(sc, hoteles);
 						break;
 
 					case 2:
@@ -70,7 +70,7 @@ public class ConsultarElementos implements OpcionMenu {
 		} while (menuUno != 4);
 	}
 
-	private void consultarHotel(Scanner sc) throws InterruptedException {
+	private void consultarHotel(Scanner sc, List<Hotel> hoteles) throws InterruptedException {
 		Boolean error = false;
 		do {
 			try {
@@ -89,7 +89,38 @@ public class ConsultarElementos implements OpcionMenu {
 					System.out.println(Color.AZUL + "\"\\n" + //
 							"---------------- Hotel encontrado ----------------\\n" + //
 							"\"" + Color.BLANCO);
-					System.out.println();
+					System.out
+							.println(Color.AMARILLO + "\nId del hotel: " + Color.VERDE + hotelConsultado.getIdHotel());
+					System.out.println(Color.AMARILLO + "\nNombre del hotel: " + Color.VERDE
+							+ hotelConsultado.getNombreEstablecimiento());
+
+					System.out.print(Color.AMARILLO + "\nCalle del hotel: "
+							+ Color.VERDE + hotelConsultado.getCalle());
+					System.out.print(
+							Color.AMARILLO + "\nNumero interior del hotel: "
+									+ Color.VERDE + hotelConsultado.getNumeroInterior());
+					System.out.print(
+							Color.AMARILLO + "\nNumero exterior del hotel: "
+									+ Color.VERDE + hotelConsultado.getNumeroExterior());
+					System.out.print(Color.AMARILLO + "\nColonia del hotel: "
+							+ Color.VERDE + hotelConsultado.getColonia());
+					System.out.print(Color.AMARILLO
+							+ "\nEstado del pais el hotel: "
+							+ Color.VERDE + hotelConsultado.getEstado());
+					System.out
+							.print(Color.AMARILLO + "\nTelefono del hotel: "
+									+ Color.VERDE + hotelConsultado.getTelefono());
+					System.out.print(Color.AMARILLO
+							+ "\nNumero de habitaciones totales del hotel: "
+							+ Color.VERDE + hotelConsultado.getNumHabitaciones());
+
+					System.out.print(Color.AMARILLO
+							+ "\nNumero de habitaciones disponibles del hotel: "
+							+ Color.VERDE + hotelConsultado.getNumHabitacionesDisponibles());
+
+					System.out.print(Color.AMARILLO
+							+ "\nNumero de habitaciones ocupadas del hotel: "
+							+ Color.VERDE + hotelConsultado.getNumHabitacionesOcupadas());
 					Thread.sleep(1500);
 				} else {
 					throw new IllegalStateException();
