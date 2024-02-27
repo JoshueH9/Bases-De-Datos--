@@ -3,6 +3,7 @@ package Menu;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 import Entidades.Hotel;
@@ -19,10 +20,20 @@ import Entidades.Habitacion;
  * @since Clase de Bases de datos 2024-2
  */
 public class ConsultarElementos implements OpcionMenu {
+	int idHotel = 0;
+	int idHabitacion = 0;
+	Hotel hotel1 = new Hotel(idHotel++, null, null, null, null, null, null, 0, 0, 0, 0);
+	Hotel hotel2 = new Hotel(idHotel++, null, null, null, null, null, null, 0, 0, 0, 0);
+	Hotel hotel3 = new Hotel(idHotel++, null, null, null, null, null, null, 0, 0, 0, 0);
+	List<Hotel> hoteles = new ArrayList<Hotel>();
 
 	@Override
 	public void ejecutar(Scanner sc) throws InterruptedException {
 		int menuUno = 0;
+		hoteles.add(hotel1);
+		hoteles.add(hotel2);
+		hoteles.add(hotel3);
+
 		do {
 			try {
 				System.out.println(Color.VERDE + "\nElije una de las siguientes opciones:\n\n "
@@ -60,7 +71,37 @@ public class ConsultarElementos implements OpcionMenu {
 	}
 
 	private void consultarHotel(Scanner sc) throws InterruptedException {
+		Boolean error = false;
+		do {
+			try {
+				System.out.print(Color.AMARILLO
+						+ "\n---------------- Ingresa los datos del hotel ----------------\n");
+				System.out.print(Color.AMARILLO + "\nIngresa el id del hotel: "
+						+ Color.VERDE);
+				int idHotel = sc.nextInt();
 
+				Optional<Hotel> hotelEncontrado = hoteles.stream()
+						.filter(hotel -> hotel.getIdHotel() == idHotel)
+						.findFirst();
+
+				if (hotelEncontrado.isPresent()) {
+					Hotel hotelConsultado = hotelEncontrado.get();
+					System.out.println(Color.AZUL + "\"\\n" + //
+							"---------------- Hotel encontrado ----------------\\n" + //
+							"\"" + Color.BLANCO);
+					System.out.println();
+					Thread.sleep(1500);
+				} else {
+					throw new IllegalStateException();
+				}
+			} catch (InputMismatchException ime) {
+				System.out.println(Color.ROJO + "\nERROR: No se encontró ningún hotel con el ID proporcionado.\n"
+						+ Color.BLANCO);
+				Thread.sleep(1500);
+				error = true;
+				sc.nextLine();
+			}
+		} while (error);
 	}
 
 	private void consultarHabitacion(Scanner sc) throws InterruptedException {
