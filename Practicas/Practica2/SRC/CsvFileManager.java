@@ -12,6 +12,10 @@ public class CsvFileManager {
 	private static final String FILENAME_HUESPEDES = "huespedes.csv";
 	private static final String FILENAME_CUARTOS = "cuartos.csv";
 
+	public CsvFileManager() {
+	}
+
+	// Métodos para escribir y leer archivos CSV
 	public static void guardarCSV(String nombreArchivo, List<String[]> datos) {
 		try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
 			for (String[] fila : datos) {
@@ -41,9 +45,9 @@ public class CsvFileManager {
 	public static int generarIdUnico(String nombreArchivo) {
 		List<String[]> datos = leerCSV(nombreArchivo);
 		int maxId = datos.stream()
-			.mapToInt(item -> Integer.parseInt(item[0]))
-			.max()
-			.orElse(0);
+				.mapToInt(item -> Integer.parseInt(item[0]))
+				.max()
+				.orElse(0);
 		return maxId + 1;
 	}
 
