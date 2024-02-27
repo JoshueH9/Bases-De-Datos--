@@ -34,7 +34,7 @@ public class ConsultarElementos implements OpcionMenu {
 	Habitacion habitacion2 = new Habitacion(idHabitacion++, "Habitacion2", idHotel, idHabitacion, true);
 	Habitacion habitacion3 = new Habitacion(idHabitacion++, "Habitacion3", idHotel, idHabitacion, true);
 	Huesped huesped1 = new Huesped(idHuesped++, "Huesped1", null, null, null, null, null, idHotel, null, idHabitacion);
-	Huesped huesped2 = new Huesped(idHuesped++, "Huesped2", null, null, null, null, null, idHotel, null, idHabitacion)
+	Huesped huesped2 = new Huesped(idHuesped++, "Huesped2", null, null, null, null, null, idHotel, null, idHabitacion);
 	Huesped huesped3 = new Huesped(idHuesped++, "Huesped3", null, null, null, null, null, idHotel, null, idHabitacion);
 
 	List<Hotel> hoteles = new ArrayList<Hotel>();
@@ -53,6 +53,9 @@ public class ConsultarElementos implements OpcionMenu {
 		habitaciones.add(habitacion1);
 		habitaciones.add(habitacion2);
 		habitaciones.add(habitacion3);
+		huespedes.add(huesped1);
+		huespedes.add(huesped2);
+		huespedes.add(huesped3);
 		do {
 			try {
 				System.out.println(Color.VERDE + "\nElije una de las siguientes opciones:\n\n "
@@ -224,7 +227,7 @@ public class ConsultarElementos implements OpcionMenu {
 							.println(Color.AMARILLO + "\nNumero de huesped: " + Color.VERDE
 									+ huespedConsultado.getIdHuesped());
 					System.out.println(Color.AMARILLO + "\nNombre completo del huesped: " + Color.VERDE
-							+ huespedConsultado.getNombre() + huespedConsultado.getApellidoPaterno()
+							+ huespedConsultado.getNombre() + " " + huespedConsultado.getApellidoPaterno() + " "
 							+ huespedConsultado.getApellidoMaterno());
 					System.out.print(Color.AMARILLO + "\nNacionalidad del huesped: "
 							+ Color.VERDE + huespedConsultado.getNacionalidad());
