@@ -1,4 +1,5 @@
 package Menu;
+import java.util.ArrayList;
 import java.util.List;
 
 import Entidades.Habitacion;
@@ -9,10 +10,6 @@ public class Listas {
 	public static List<Hotel> hotelGlobal;
 	public static List<Huesped> huespedGlobal;
 	public static List<Habitacion> habitacionGlobal;
-
-	public Listas() {
-
-	}
 
 	public static List<Hotel> getListaHotel() {
 		return hotelGlobal;
@@ -26,16 +23,16 @@ public class Listas {
 		return habitacionGlobal;
 	}
 
-	public void setListaHotel(List<Hotel> hotelGlobal) {
-		this.hotelGlobal = hotelGlobal;
+	public static void setListaHotel(List<Hotel> hotelGlobalN) {
+		hotelGlobal = hotelGlobalN;
 	}
 
-	public void setListaHuesped(List<Huesped> huespedGlobal) {
-		this.huespedGlobal = huespedGlobal;
+	public static void setListaHuesped(List<Huesped> huespedGlobalN) {
+		huespedGlobal = huespedGlobalN;
 	}
 
-	public void setListaHabitacion(List<Habitacion> habitacionGlobal) {
+	public static void setListaHabitacion(List<Habitacion> habitacionGlobalN) {
 
-		this.habitacionGlobal = habitacionGlobal;
+		habitacionGlobal = habitacionGlobalN;
 	}
 }

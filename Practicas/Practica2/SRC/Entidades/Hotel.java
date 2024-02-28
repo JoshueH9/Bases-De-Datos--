@@ -15,38 +15,40 @@ import java.util.List;
 
 public class Hotel {
 
-	/* Numero identificador del hotel (Identificador) */
-	private Integer idHotel = 1;
+	/** Numero identificador del hotel (Identificador) */
+	private Integer idHotel;
 
-	/* Nombre del hotel */
+	/** Nombre del hotel */
 	private String nombreEstablecimiento;
 
-	/* Calle del Hotel */
+	/** Calle del Hotel */
 	private String calle;
 
-	/* Numero interior del hotel */
+	/** Numero interior del hotel */
 	private String numeroInterior;
 
-	/* Numero exterior del hotel */
+	/** Numero exterior del hotel */
 	private String numeroExterior;
 
-	/* Colonia en la que esta situado el hotel */
+	/** Colonia en la que esta situado el hotel */
 	private String colonia;
 
-	/* Estado del pais en el que esta el hotel */
+	/** Estado del pais en el que esta el hotel */
 	private String estado;
 
-	/* Numeros de telefono del hotel */
+	/** Numeros de telefono del hotel */
 	private Integer telefono;
 
-	/* Numero de habitaciones totales del hotel */
+	/** Numero de habitaciones totales del hotel */
 	private Integer numHabitaciones;
 
-	/* Numero de habitaciones disponibles del hotel */
+	/** Numero de habitaciones disponibles del hotel */
 	private Integer numHabitacionesDisponibles;
 
-	/* Numero de habitaciones ocupadas del hotel */
+	/** Numero de habitaciones ocupadas del hotel */
 	private Integer numHabitacionesOcupadas;
+
+	private static int ultimoIdHotel = 0;
 
 	/**
 	 * Constructor de un Hotel
@@ -67,7 +69,7 @@ public class Hotel {
 	public Hotel(String nombreEstablecimiento, String calle, String numeroInterior, String numeroExterior,
 			String colonia, String estado, Integer telefono, Integer numHabitaciones, Integer numHabitacionesDisponibles,
 			Integer numHabitacionesOcupadas) {
-		this.idHotel++;
+		this.idHotel = ++ultimoIdHotel;
 		this.nombreEstablecimiento = nombreEstablecimiento;
 		this.calle = calle;
 		this.numeroInterior = numeroInterior;
@@ -79,6 +81,7 @@ public class Hotel {
 		this.numHabitacionesDisponibles = numHabitacionesDisponibles;
 		this.numHabitacionesOcupadas = numHabitacionesOcupadas;
 	}
+
 
 	/* ---------------------------- GETTERS ------------------------------ */
 

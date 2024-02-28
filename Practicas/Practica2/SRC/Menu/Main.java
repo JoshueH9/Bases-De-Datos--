@@ -1,17 +1,7 @@
 package Menu;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
 
-import Entidades.Hotel;
-import Entidades.Huesped;
-import Entidades.Habitacion;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 /**
  * Clase principal donde crearemos el menú para interactuar con la base de
@@ -90,6 +80,11 @@ public class Main {
                 sc.nextLine();
             }
         } while (menu != 5);
+        
+        CsvFileManager.exportaBaseDeDatos();
+
     }
+
+
 
 }

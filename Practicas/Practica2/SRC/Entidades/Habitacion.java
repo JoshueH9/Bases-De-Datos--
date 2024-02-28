@@ -13,7 +13,7 @@ package Entidades;
 public class Habitacion {
 
 	/* Numero de identificacion de la habitacion (Identificador) */
-	private Integer numHabitacion = 1;
+	private Integer numHabitacion;
 
 	/* Nombre del tipo de habitacion */
 	private String nombreTipo;
@@ -27,6 +27,8 @@ public class Habitacion {
 	/* Determina si la habitación esta disponible */
 	private Integer disponible;
 
+	private static int ultimoNumHabitacion = 0;
+
 	/**
 	 * Constructor de una Habitacion
 	 * 
@@ -37,7 +39,7 @@ public class Habitacion {
 	 * @param disponible    Determina si la habitación esta disponible
 	 */
 	public Habitacion(String nombreTipo, Integer numCamas, Integer costoPorNoche, Integer disponible) {
-		this.numHabitacion++;
+		this.numHabitacion = ++ultimoNumHabitacion;
 		this.nombreTipo = nombreTipo;
 		this.numCamas = numCamas;
 		this.costoPorNoche = costoPorNoche;

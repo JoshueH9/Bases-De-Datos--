@@ -15,7 +15,7 @@ import java.util.List;
 public class Huesped {
 
 	/* Numero identificador del cliente (Identificador) */
-	private Integer idHuesped = 1;
+	private Integer idHuesped;
 
 	/* Nombre del huesped */
 	private String nombre;
@@ -44,6 +44,8 @@ public class Huesped {
 	/* Numeros de telefono del huesped */
 	private Integer telefono;
 
+	private static int ultimoIdHuesped = 0;
+
 	/**
 	 * Constructor de un Huesped
 	 * 
@@ -61,7 +63,7 @@ public class Huesped {
 	public Huesped(String nombre, String apellidoPaterno, String apellidoMaterno, String nacionalidad,
 			String fechaNacimiento, String genero, Integer numeroMembresia, String correo,
 			Integer telefono) {
-		this.idHuesped++;
+		this.idHuesped = ++ultimoIdHuesped;
 		this.nombre = nombre;
 		this.apellidoPaterno = apellidoPaterno;
 		this.apellidoMaterno = apellidoMaterno;
@@ -72,6 +74,7 @@ public class Huesped {
 		this.correo = correo;
 		this.telefono = telefono;
 	}
+
 
 	/* ---------------------------- GETTERS ------------------------------ */
 

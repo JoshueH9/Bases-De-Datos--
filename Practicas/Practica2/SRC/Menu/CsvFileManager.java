@@ -64,7 +64,6 @@ public class CsvFileManager {
 		FileReader fileReader = null;
 		BufferedReader bufferedReader = null;
 
-		Listas l = new Listas();
 		List<Hotel> hotel = new ArrayList<>();
 		List<Huesped> huesped = new ArrayList<>(); 
 		List<Habitacion> habitacion = new ArrayList<>();
@@ -145,75 +144,36 @@ public class CsvFileManager {
 			}
 		}
 
-		l.setListaHotel(hotel);
-		l.setListaHuesped(huesped);
-		l.setListaHabitacion(habitacion);
+		Listas.setListaHotel(hotel);
+		Listas.setListaHuesped(huesped);
+		Listas.setListaHabitacion(habitacion);
 
 	}
 
-    public static void guardarCSV(String nombreArchivo, String dato) {
-	File file = new File(nombreArchivo);
-	try {
-		file.getParentFile().mkdirs(); // Crear el directorio si no existe
-		if (!file.exists()) {
-			file.createNewFile(); // Crear el archivo si no existe
-		}
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
-
-        try (FileWriter writer = new FileWriter(nombreArchivo, true)) {
-		writer.append(dato).append("\n");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-	public static List<String[]> leerCSV(String nombreArchivo) {
-		List<String[]> datos = new ArrayList<>();
-		try (BufferedReader reader = new BufferedReader(new FileReader(nombreArchivo))) {
-			String linea;
-			while ((linea = reader.readLine()) != null) {
-				String[] fila = linea.split(",");
-				datos.add(fila);
+	public static void exportaBaseDeDatos(){
+		
+		List<Hotel> hoteles = Listas.getListaHotel();
+		List<Habitacion> habitaciones = Listas.getListaHabitacion();
+		List<Huesped> huespedes = Listas.getListaHuesped();
+		
+		try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("SRC/Doc/Huesped.csv"))) {
+			List<String> hotelesString = new ArrayList<>();
+			for (Hotel hotel : hoteles) 
+				hotelesString.add(convertHotel(hotel));		
+			
+			for (String cadena : hotelesString) {
+				String[] palabras = cadena.split(",");
+				for (String palabra : palabras) {
+					bufferedWriter.write(palabra);
+					bufferedWriter.write(",");
+				}
+				bufferedWriter.newLine();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return datos;
+
+		/* Cuando se logre hacer para hoteles, hacer copia y pega para ajustar con cliente y habitacion en este mismo método */
+
 	}
-
 }	
-
-// Ejemplo de uso
-/*
- * public static void main(String[] args) {
- * // Ejemplo de datos
- * List<String[]> datosAGuardar = new ArrayList<>();
- * datosAGuardar.add(new String[]{"Nombre", "Edad", "Ciudad"});
- * datosAGuardar.add(new String[]{"Juan", "25", "Ciudad de Mexico"});
- * datosAGuardar.add(new String[]{"Maria", "30", "Buenos Aires"});
- * 
- * // Guardar en un archivo CSV
- * guardarCSV("datos.csv", datosAGuardar);
- * 
- * // Leer desde un archivo CSV
- * List<Hotel> hoteles = new ArrayList<>();
- * List<String[]> datos = new ArrayList<>();
- * // Cargar datos desde CSV (ejemplo)
- * // CsvFileManager.loadHoteles(hoteles);
- * // CsvFileManager.loadHuespedes(huespedes);
- * // CsvFileManager.loadCuartos(cuartos);
- * 
- * datos = CsvFileManager.leerCSV("Practicas/Practica2/SRC/Archivo.csv");
- * 
- * Imprimir los datos leídos
- * for (String[] fila : datos) {
- * for (String valor : fila) {
- * System.out.print("+" + valor + "\t");
- * }
- * System.out.println();
- * }
- * }
- * }
- */

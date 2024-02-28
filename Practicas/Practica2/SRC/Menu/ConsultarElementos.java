@@ -21,49 +21,23 @@ import Entidades.Habitacion;
  * @since Clase de Bases de datos 2024-2
  */
 public class ConsultarElementos implements OpcionMenu {
-	/*
-	 * Reemplazar despues por los datos reales
-	 */
-	int idHotel = 1;
-	int idHabitacion = 1;
-	int idHuesped = 1;
-
-	Hotel hotel1 = new Hotel("Hotel1", "calle1", null, null, null, null, 0, 0, 0, 0);
-	Hotel hotel2 = new Hotel(null, null, null, null, null, null, 0, 0, 0, 0);
-	Hotel hotel3 = new Hotel(null, null, null, null, null, null, 0, 0, 0, 0);
-	Habitacion habitacion1 = new Habitacion("Habitacion1", idHotel, idHabitacion, 1);
-	Habitacion habitacion2 = new Habitacion("Habitacion2", idHotel, idHabitacion, 1);
-	Habitacion habitacion3 = new Habitacion("Habitacion3", idHotel, idHabitacion, 1);
-	Huesped huesped1 = new Huesped("Huesped1", null, null, null, null, null, idHotel, null, idHabitacion);
-	Huesped huesped2 = new Huesped("Huesped2", null, null, null, null, null, idHotel, null, idHabitacion);
-	Huesped huesped3 = new Huesped("Huesped3", null, null, null, null, null, idHotel, null, idHabitacion);
-
-	List<Hotel> hoteles = new ArrayList<Hotel>();
-	List<Habitacion> habitaciones = new ArrayList<Habitacion>();
-	List<Huesped> huespedes = new ArrayList<Huesped>();
+	
+	List<Hotel> hoteles = Listas.getListaHotel();
+	List<Habitacion> habitaciones = Listas.getListaHabitacion();
+	List<Huesped> huespedes = Listas.getListaHuesped();
 
 	@Override
 	public void ejecutar(Scanner sc) throws InterruptedException {
+
 		int menuUno = 0;
-		/*
-		 * Reemplazar despues por los datos reales
-		 */
-		hoteles.add(hotel1);
-		hoteles.add(hotel2);
-		hoteles.add(hotel3);
-		habitaciones.add(habitacion1);
-		habitaciones.add(habitacion2);
-		habitaciones.add(habitacion3);
-		huespedes.add(huesped1);
-		huespedes.add(huesped2);
-		huespedes.add(huesped3);
+
 		do {
 			try {
 				System.out.println(Color.VERDE + "\nElije una de las siguientes opciones:\n\n "
 						+ Color.AMARILLO + "1) " + Color.VERDE + "Consultar hotel.\n "
 						+ Color.AMARILLO + "2) " + Color.VERDE + "Consultar Habitacion.\n "
 						+ Color.AMARILLO + "3) " + Color.VERDE + "Consultar Huesped.\n\n "
-						+ Color.AMARILLO + "4) " + Color.VERDE + "Salir del menú.");
+						+ Color.AMARILLO + "4) " + Color.VERDE + "Salir al menú inicial.");
 
 				System.out.print(Color.AMARILLO + "\n Opcion: ");
 				menuUno = sc.nextInt();
@@ -143,17 +117,23 @@ public class ConsultarElementos implements OpcionMenu {
 
 					System.out.print(Color.AZUL
 							+ "\nNumero de habitaciones ocupadas del hotel: "
-							+ Color.BLANCO + hotelConsultado.getNumHabitacionesOcupadas());
+							+ Color.BLANCO + hotelConsultado.getNumHabitacionesOcupadas()+"\n");
 					Thread.sleep(1500);
+					error = false;
 				} else {
 					throw new IllegalStateException();
 				}
 			} catch (InputMismatchException ime) {
-				System.out.println(Color.ROJO + "\nERROR: No se encontró ningún hotel con el ID proporcionado.\n"
+				System.out.println(Color.ROJO + "\nERROR: Ingresa un numero valido.\n"
 						+ Color.BLANCO);
 				Thread.sleep(1500);
 				error = true;
 				sc.nextLine();
+			} catch (IllegalStateException ise){
+				System.out.println(Color.ROJO + "\nERROR: No se encontró ningún hotel con el ID proporcionado.\n"
+						+ Color.BLANCO);
+				Thread.sleep(1500);
+				error = false;
 			}
 		} while (error);
 	}
@@ -189,18 +169,23 @@ public class ConsultarElementos implements OpcionMenu {
 							Color.AZUL + "\nCosto por noche de la habitacion: "
 									+ Color.BLANCO + habitacionConsultada.getCostoPorNoche());
 					System.out.println(Color.AZUL + "\nDisponibilidad de la habitacion: "
-							+ ((habitacionConsultada.isDisponible() > 0) ? "DISPONIBLE" : "NO DISPONIBLE"));
+							+ ((habitacionConsultada.isDisponible() > 0) ? "DISPONIBLE" : "NO DISPONIBLE")+"\n");
 					Thread.sleep(1500);
+					error = false;
 				} else {
 					throw new IllegalStateException();
 				}
 			} catch (InputMismatchException ime) {
-				System.out.println(
-						Color.ROJO + "\nERROR: No se encontró ninguna habitacion con el numero proporcionado.\n"
-								+ Color.BLANCO);
+				System.out.println(Color.ROJO + "\nERROR: Ingresa un numero valido.\n"
+						+ Color.BLANCO);
 				Thread.sleep(1500);
 				error = true;
 				sc.nextLine();
+			} catch (IllegalStateException ise){
+				System.out.println(Color.ROJO + "\nERROR: No se encontró ningún hotel con el ID proporcionado.\n"
+						+ Color.BLANCO);
+				Thread.sleep(1500);
+				error = false;
 			}
 		} while (error);
 	}
@@ -211,7 +196,7 @@ public class ConsultarElementos implements OpcionMenu {
 			try {
 				System.out.print(Color.AMARILLO
 						+ "\n---------------- Ingresa los datos del cliente ----------------\n");
-				System.out.print(Color.AMARILLO + "\nIngresa el identificador del cliente: "
+				System.out.print(Color.AMARILLO + "\nIngresa el identificador del huesped: "
 						+ Color.VERDE);
 				int idHuesped = sc.nextInt();
 
@@ -245,18 +230,23 @@ public class ConsultarElementos implements OpcionMenu {
 									+ Color.BLANCO + huespedConsultado.getCorreos());
 					System.out.print(
 							Color.AZUL + "\nTelefono del huesped: "
-									+ Color.BLANCO + huespedConsultado.getTelefonos());
+									+ Color.BLANCO + huespedConsultado.getTelefonos()+"\n");
 					Thread.sleep(1500);
+					error = false;
 				} else {
 					throw new IllegalStateException();
 				}
 			} catch (InputMismatchException ime) {
-				System.out.println(
-						Color.ROJO + "\nERROR: No se encontró ninguna huesped con el identificador proporcionado.\n"
-								+ Color.BLANCO);
+				System.out.println(Color.ROJO + "\nERROR: Ingresa un numero valido.\n"
+						+ Color.BLANCO);
 				Thread.sleep(1500);
 				error = true;
 				sc.nextLine();
+			} catch (IllegalStateException ise){
+				System.out.println(Color.ROJO + "\nERROR: No se encontró ningún hotel con el ID proporcionado.\n"
+						+ Color.BLANCO);
+				Thread.sleep(1500);
+				error = false;
 			}
 		} while (error);
 	}

@@ -71,7 +71,6 @@ public class AgregarElementos implements OpcionMenu {
 						+ "\n---------------- Ingresa los datos del hotel ----------------\n");
 				System.out.print(Color.AMARILLO + "\nIngresa el nombre del hotel: "
 						+ Color.VERDE);
-				//sc.nextLine();
 				String nombre = sc.next();
 				System.out.print(Color.AMARILLO + "\nIngresa la calle del hotel: "
 						+ Color.VERDE);
@@ -117,10 +116,9 @@ public class AgregarElementos implements OpcionMenu {
 				  Hotel hotel = new Hotel(nombre, calle, numeroInterior, numeroExterior, colonia, estado,
 						telefono, numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
 
-				Listas l = new Listas();
 				List<Hotel> hoteles = Listas.getListaHotel();
 				hoteles.add(hotel); 
-				l.setListaHotel(hoteles);
+				Listas.setListaHotel(hoteles);
 
 				error = false;
 				System.out.println(
@@ -158,10 +156,9 @@ public class AgregarElementos implements OpcionMenu {
 				 */
 				Habitacion habitacion = new Habitacion(nombreTipo, numCamas, costoNoche, 1);
 
-				Listas l = new Listas();
 				List<Habitacion> habitaciones = Listas.getListaHabitacion();
 				habitaciones.add(habitacion); 
-				l.setListaHabitacion(habitaciones);
+				Listas.setListaHabitacion(habitaciones);
 				
 				error = false;
 				System.out.println(
@@ -219,10 +216,9 @@ public class AgregarElementos implements OpcionMenu {
 				Huesped huesped = new Huesped(nombreHuesped, apellidoPaterno, apellidoMaterno,
 						nacionalidad, fechaNacimiento, genero, numeroMembresia, correo, telefono);
 
-				Listas l = new Listas();
 				List<Huesped> huespedes = Listas.getListaHuesped();
 				huespedes.add(huesped); 
-				l.setListaHuesped(huespedes);
+				Listas.setListaHuesped(huespedes);
 
 				error = false;
 				System.out.println(
