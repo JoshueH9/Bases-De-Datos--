@@ -72,7 +72,6 @@ public class Main {
                         Thread.sleep(1500);
                         menu = 6;
                         break;
-                        System.out.println();
                 }
             } catch (InputMismatchException ime) {
                 System.out.println(Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);

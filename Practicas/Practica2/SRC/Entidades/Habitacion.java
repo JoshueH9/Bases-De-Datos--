@@ -130,4 +130,5 @@ public class Habitacion {
 	public void setDisponible(Integer disponible) {
 		this.disponible = disponible;
 	}
+
 }
