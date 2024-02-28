@@ -1,5 +1,3 @@
-package Menu;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -9,10 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
-
-import Entidades.Habitacion;
-import Entidades.Hotel;
-import Entidades.Huesped;
 
 /**
  * Clase para manejar archivos csv.

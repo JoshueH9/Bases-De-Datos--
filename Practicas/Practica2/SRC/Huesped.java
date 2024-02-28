@@ -1,5 +1,3 @@
-package Entidades;
-
 import java.util.List;
 
 /**

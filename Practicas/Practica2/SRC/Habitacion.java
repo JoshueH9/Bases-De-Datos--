@@ -1,5 +1,3 @@
-package Entidades;
-
 /**
  * Representacion del Habitaciones.
  * 

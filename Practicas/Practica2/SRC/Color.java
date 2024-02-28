@@ -1,5 +1,3 @@
-package Menu;
-
 public class Color {
 	// Códigos ANSI para cambiar el color del texto en la consola
 	public static final String RESET = "\u001B[0m";

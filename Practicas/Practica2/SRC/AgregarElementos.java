@@ -1,13 +1,7 @@
-package Menu;
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-
-import Entidades.Hotel;
-import Entidades.Huesped;
-import Entidades.Habitacion;
 
 /**
  * Clase que simula el menu para agregar nuevos elementos.

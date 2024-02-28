@@ -1,11 +1,5 @@
-package Menu;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import Entidades.Habitacion;
-import Entidades.Hotel;
-import Entidades.Huesped;
 
 public class Listas {
 	private static List<Hotel> hotelGlobal;
