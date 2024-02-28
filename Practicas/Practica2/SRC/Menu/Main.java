@@ -80,11 +80,9 @@ public class Main {
                 sc.nextLine();
             }
         } while (menu != 5);
-        
+
         CsvFileManager.exportaBaseDeDatos();
 
     }
-
-
 
 }

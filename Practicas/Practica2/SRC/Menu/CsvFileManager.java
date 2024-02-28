@@ -62,7 +62,105 @@ public class CsvFileManager {
 				huesped.getTelefonos();
 	}
 
+	/*
+	 * public static void cargarBaseDeDatos() {
+	 * FileReader fileReader = null;
+	 * BufferedReader bufferedReader = null;
+	 * 
+	 * List<Hotel> hotel = new ArrayList<>();
+	 * List<Huesped> huesped = new ArrayList<>();
+	 * List<Habitacion> habitacion = new ArrayList<>();
+	 * 
+	 * try {
+	 * fileReader = new FileReader("Practicas/Practica2/SRC/Doc/Habitacion.csv");
+	 * bufferedReader = new BufferedReader(fileReader);
+	 * String linea;
+	 * while ((linea = bufferedReader.readLine()) != null) {
+	 * String[] arreglo = linea.split(",");
+	 * hotel.add(new Hotel(arreglo[0], arreglo[1], arreglo[2], arreglo[3],
+	 * arreglo[4], arreglo[5],
+	 * Integer.valueOf(arreglo[6]), Integer.valueOf(arreglo[7]),
+	 * Integer.valueOf(arreglo[8]),
+	 * Integer.valueOf(arreglo[9])));
+	 * }
+	 * 
+	 * } catch (IOException e) {
+	 * System.out.println("Excepción leyendo archivo: " + e.getMessage());
+	 * } finally {
+	 * try {
+	 * if (fileReader != null) {
+	 * fileReader.close();
+	 * }
+	 * if (bufferedReader != null) {
+	 * bufferedReader.close();
+	 * }
+	 * } catch (IOException e) {
+	 * System.out.println("Excepción cerrando: " + e.getMessage());
+	 * }
+	 * }
+	 * 
+	 * try {
+	 * fileReader = new FileReader("Practicas/Practica2/SRC/Doc/Hotel.csv");
+	 * bufferedReader = new BufferedReader(fileReader);
+	 * String linea2;
+	 * while ((linea2 = bufferedReader.readLine()) != null) {
+	 * String[] arreglo2 = linea2.split(",");
+	 * huesped.add(new Huesped(arreglo2[0], arreglo2[1], arreglo2[2], arreglo2[3],
+	 * arreglo2[4], arreglo2[5],
+	 * Integer.valueOf(arreglo2[6]), arreglo2[7], Integer.valueOf(arreglo2[8])));
+	 * }
+	 * // Integer.valueOf(arreglo[1])
+	 * 
+	 * } catch (IOException e) {
+	 * System.out.println("Excepción leyendo archivo: " + e.getMessage());
+	 * } finally {
+	 * try {
+	 * if (fileReader != null) {
+	 * fileReader.close();
+	 * }
+	 * if (bufferedReader != null) {
+	 * bufferedReader.close();
+	 * }
+	 * } catch (IOException e) {
+	 * System.out.println("Excepción cerrando: " + e.getMessage());
+	 * }
+	 * }
+	 * 
+	 * try {
+	 * fileReader = new FileReader("Practicas/Practica2/SRC/Doc/Huesped.csv");
+	 * bufferedReader = new BufferedReader(fileReader);
+	 * String linea3;
+	 * while ((linea3 = bufferedReader.readLine()) != null) {
+	 * String[] arreglo3 = linea3.split(",");
+	 * habitacion.add(new Habitacion(arreglo3[0], Integer.valueOf(arreglo3[1]),
+	 * Integer.valueOf(arreglo3[2]),
+	 * Integer.valueOf(arreglo3[3])));
+	 * }
+	 * // Integer.valueOf(arreglo[1])
+	 * 
+	 * } catch (IOException e) {
+	 * System.out.println("Excepción leyendo archivo: " + e.getMessage());
+	 * } finally {
+	 * try {
+	 * if (fileReader != null) {
+	 * fileReader.close();
+	 * }
+	 * if (bufferedReader != null) {
+	 * bufferedReader.close();
+	 * }
+	 * } catch (IOException e) {
+	 * System.out.println("Excepción cerrando: " + e.getMessage());
+	 * }
+	 * }
+	 * 
+	 * Listas.setListaHotel(hotel);
+	 * Listas.setListaHuesped(huesped);
+	 * Listas.setListaHabitacion(habitacion);
+	 * 
+	 * }
+	 */
 	public static void cargarBaseDeDatos() {
+		String rutaAbsoluta = "Practicas/Practica2/SRC/Doc/";
 		FileReader fileReader = null;
 		BufferedReader bufferedReader = null;
 
@@ -71,88 +169,92 @@ public class CsvFileManager {
 		List<Habitacion> habitacion = new ArrayList<>();
 
 		try {
-			fileReader = new FileReader("SRC/Doc/Hotel.csv");
+			fileReader = new FileReader(rutaAbsoluta + "Hotel.csv");
 			bufferedReader = new BufferedReader(fileReader);
 			String linea;
 			while ((linea = bufferedReader.readLine()) != null) {
 				String[] arreglo = linea.split(",");
-				hotel.add(new Hotel(arreglo[0], arreglo[1], arreglo[2], arreglo[3], arreglo[4], arreglo[5],
-						Integer.valueOf(arreglo[6]), Integer.valueOf(arreglo[7]), Integer.valueOf(arreglo[8]),
-						Integer.valueOf(arreglo[9])));
+				// Verificar si el arreglo tiene al menos 10 elementos antes de intentar
+				// convertir a entero
+				if (arreglo.length >= 10) {
+					hotel.add(new Hotel(arreglo[0], arreglo[1], arreglo[2], arreglo[3], arreglo[4], arreglo[5],
+							Integer.parseInt(arreglo[6]), Integer.parseInt(arreglo[7]), Integer.parseInt(arreglo[8]),
+							Integer.parseInt(arreglo[9])));
+				} else {
+					// Manejar el caso donde el arreglo no tiene suficientes elementos
+					System.out.println("Error: Hotel con formato incorrecto en la línea: " + linea);
+				}
 			}
-			// Integer.valueOf(arreglo[1])
-
-		} catch (IOException e) {
+		} catch (IOException | NumberFormatException e) {
 			System.out.println("Excepción leyendo archivo: " + e.getMessage());
 		} finally {
-			try {
-				if (fileReader != null) {
-					fileReader.close();
-				}
-				if (bufferedReader != null) {
-					bufferedReader.close();
-				}
-			} catch (IOException e) {
-				System.out.println("Excepción cerrando: " + e.getMessage());
-			}
+			cerrarRecursos(fileReader, bufferedReader);
 		}
 
+		// Repetir el mismo proceso para "Habitacion.csv"
 		try {
-			fileReader = new FileReader("SRC/Doc/Huesped.csv");
+			fileReader = new FileReader(rutaAbsoluta + "Habitacion.csv");
 			bufferedReader = new BufferedReader(fileReader);
 			String linea2;
 			while ((linea2 = bufferedReader.readLine()) != null) {
 				String[] arreglo2 = linea2.split(",");
-				huesped.add(new Huesped(arreglo2[0], arreglo2[1], arreglo2[2], arreglo2[3], arreglo2[4], arreglo2[5],
-						Integer.valueOf(arreglo2[6]), arreglo2[7], Integer.valueOf(arreglo2[8])));
+				// Verificar si el arreglo tiene al menos 5 elementos antes de intentar
+				// convertir a entero
+				if (arreglo2.length >= 5) {
+					habitacion.add(
+							new Habitacion(arreglo2[1], Integer.parseInt(arreglo2[2]), Integer.parseInt(arreglo2[3]),
+									Integer.parseInt(arreglo2[4])));
+				} else {
+					// Manejar el caso donde el arreglo no tiene suficientes elementos
+					System.out.println("Error: Habitacion con formato incorrecto en la línea: " + linea2);
+				}
 			}
-			// Integer.valueOf(arreglo[1])
-
-		} catch (IOException e) {
+		} catch (IOException | NumberFormatException e) {
 			System.out.println("Excepción leyendo archivo: " + e.getMessage());
 		} finally {
-			try {
-				if (fileReader != null) {
-					fileReader.close();
-				}
-				if (bufferedReader != null) {
-					bufferedReader.close();
-				}
-			} catch (IOException e) {
-				System.out.println("Excepción cerrando: " + e.getMessage());
-			}
+			cerrarRecursos(fileReader, bufferedReader);
 		}
 
+		// Repetir el mismo proceso para Huesped.csv
 		try {
-			fileReader = new FileReader("SRC/Doc/Habitacion.csv");
+			fileReader = new FileReader(rutaAbsoluta + "Huesped.csv");
 			bufferedReader = new BufferedReader(fileReader);
-			String linea3;
-			while ((linea3 = bufferedReader.readLine()) != null) {
-				String[] arreglo3 = linea3.split(",");
-				habitacion.add(new Habitacion(arreglo3[0], Integer.valueOf(arreglo3[1]), Integer.valueOf(arreglo3[2]),
-						Integer.valueOf(arreglo3[3])));
+			String linea2;
+			while ((linea2 = bufferedReader.readLine()) != null) {
+				String[] arreglo2 = linea2.split(",");
+				// Verificar si el arreglo tiene al menos 10 elementos antes de intentar
+				// convertir a entero
+				if (arreglo2.length >= 10) {
+					huesped.add(new Huesped(arreglo2[1], arreglo2[2], arreglo2[3], arreglo2[4],
+							arreglo2[5],
+							arreglo2[6], Integer.parseInt(arreglo2[7]), arreglo2[8], Integer.parseInt(arreglo2[9])));
+				} else {
+					// Manejar el caso donde el arreglo no tiene suficientes elementos
+					System.out.println("Error: Huesped con formato incorrecto en la línea: " + linea2);
+				}
 			}
-			// Integer.valueOf(arreglo[1])
-
-		} catch (IOException e) {
+		} catch (IOException | NumberFormatException e) {
 			System.out.println("Excepción leyendo archivo: " + e.getMessage());
 		} finally {
-			try {
-				if (fileReader != null) {
-					fileReader.close();
-				}
-				if (bufferedReader != null) {
-					bufferedReader.close();
-				}
-			} catch (IOException e) {
-				System.out.println("Excepción cerrando: " + e.getMessage());
-			}
+			cerrarRecursos(fileReader, bufferedReader);
 		}
 
 		Listas.setListaHotel(hotel);
 		Listas.setListaHuesped(huesped);
 		Listas.setListaHabitacion(habitacion);
+	}
 
+	private static void cerrarRecursos(FileReader fileReader, BufferedReader bufferedReader) {
+		try {
+			if (fileReader != null) {
+				fileReader.close();
+			}
+			if (bufferedReader != null) {
+				bufferedReader.close();
+			}
+		} catch (IOException e) {
+			System.out.println("Excepción cerrando: " + e.getMessage());
+		}
 	}
 
 	public static void exportaBaseDeDatos() {
@@ -161,13 +263,14 @@ public class CsvFileManager {
 		List<Huesped> huespedes = Listas.getListaHuesped();
 
 		// Exportar hoteles
-		exportarEntidades("SRC/Doc/Hotel.csv", hoteles, CsvFileManager::convertHotel);
+		exportarEntidades("Practicas/Practica2/SRC/Doc/Habitacion.csv", hoteles, CsvFileManager::convertHotel);
 
 		// Exportar habitaciones
-		exportarEntidades("SRC/Doc/Habitacion.csv", habitaciones, CsvFileManager::convertHabitacion);
+		exportarEntidades("Practicas/Practica2/SRC/Doc/Hotel.csv", habitaciones, CsvFileManager::convertHabitacion);
 
 		// Exportar huéspedes
-		exportarEntidades("SRC/Doc/Huesped.csv", huespedes, CsvFileManager::convertHuesped);
+		exportarEntidades("Practicas/Practica2/SRC/Doc/Huesped.csv", huespedes, CsvFileManager::convertHuesped);
+		System.out.println("Hola mundo");
 	}
 
 	/*
