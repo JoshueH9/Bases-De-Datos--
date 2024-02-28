@@ -320,13 +320,53 @@ public class EditarElementos implements OpcionMenu {
 		Boolean error = false;
 		do {
 			try {
+				System.out.println(Color.VERDE + "\nElije una de las siguientes opciones para editar:\n\n "
+						+ Color.AMARILLO + "1) " + Color.VERDE + "Editar el nombre del tipo de la habitacion.\n "
+						+ Color.AMARILLO + "2) " + Color.VERDE + "Editar numero de camas de la habitacion.\n "
+						+ Color.AMARILLO + "3) " + Color.VERDE + "Editar costo por noche de la habitacion.\n"
+						+ Color.AMARILLO + "4) " + Color.VERDE + "Editar disponibilidad de la habitacion.\n"
+						+ Color.AMARILLO + "5) " + Color.VERDE + "Salir del menú.");
+
+				System.out.print(Color.AMARILLO + "\n Opcion: " + Color.VERDE);
+				int menuDos = sc.nextInt();
+
+				switch (menuDos) {
+					case 1: // Nombre
+						System.out.println(Color.AZUL + "\nNombre actual del tipo de habitacion: " + Color.BLANCO
+								+ habitacion.getNombreTipo());
+						System.out.print(Color.AMARILLO + "\nIngresa el nuevo nombre del tipo de habitacion: "
+								+ Color.VERDE);
+						String nombre = sc.next();
+						habitacion.setNombreTipo(nombre);
+						break;
+					case 2: // Numero de camas
+						System.out.println(Color.AZUL + "\nCosto por noche actual de la habitacion: " + Color.BLANCO
+								+ habitacion.getNombreTipo());
+						System.out.print(Color.AMARILLO + "\nIngresa el nuevo costo por noche de la habitacion: "
+								+ Color.VERDE);
+						int costoNoche = sc.nextInt();
+						habitacion.setCostoPorNoche(costoNoche);
+						;
+						break;
+					case 3: // Costo por noche
+						System.out.println(Color.AZUL + "\nNumero de camas actual de la habitacion: " + Color.BLANCO
+								+ habitacion.getNombreTipo());
+						System.out.print(Color.AMARILLO + "\nIngresa el nuevo numero de camas de la habitacion: "
+								+ Color.VERDE);
+						int numeroCamas = sc.nextInt();
+						habitacion.setNumCamas(numeroCamas);
+						break;
+					default:
+						throw new InputMismatchException();
+				}
+				System.out.println(
+						Color.AZUL + "\nhabitacion editado con exito\n" + Color.BLANCO);
+				Thread.sleep(1500);
 
 			} catch (InputMismatchException ime) {
-				System.out.println(
-						Color.ROJO + "\nERROR: No se encontró ninguna habitacion con el numero proporcionado.\n"
-								+ Color.BLANCO);
-				Thread.sleep(1500);
+				System.out.println(Color.ROJO + "\nERROR: Ingresa un numero. del 1 al 11\n" + Color.BLANCO);
 				error = true;
+				Thread.sleep(1500);
 				sc.nextLine();
 			}
 		} while (error);
