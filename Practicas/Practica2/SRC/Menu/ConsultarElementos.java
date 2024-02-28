@@ -108,6 +108,10 @@ public class ConsultarElementos implements OpcionMenu {
 						telefono,
 						numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
 
+				List<String> hotelCsv = CsvFileManager.leerCSV("Doc/Hotel.csv");
+
+				System.out.print(hotelCsv);
+
 				List<Hotel> hoteles = new ArrayList<>();
 
 				hoteles.add(hotel); // calle,numInteior,etc.

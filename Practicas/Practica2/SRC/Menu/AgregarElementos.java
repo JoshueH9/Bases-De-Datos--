@@ -5,68 +5,15 @@ import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.File;
+import java.util.List;
+import java.util.ArrayList;
 
 import Entidades.Hotel;
 import Entidades.Huesped;
 import Entidades.Habitacion;
+import Menu.CsvFileManager;
 
 public class AgregarElementos implements OpcionMenu {
-
-	public static String convertHotel (Hotel hotel) {
-		return hotel.getIdHotel() + "," +
-		hotel.getNombreEstablecimiento() + "," +
-                hotel.getCalle() + "," +
-                hotel.getNumeroInterior() + "," +
-                hotel.getNumeroExterior() + "," +
-                hotel.getColonia() + "," +
-                hotel.getEstado() + "," +
-                hotel.getTelefono() + "," +
-                hotel.getNumHabitaciones() + "," +
-                hotel.getNumHabitacionesDisponibles() + "," +
-                hotel.getNumHabitacionesOcupadas();
-	}
-
-	public static String convertHabitacion(Habitacion habitacion) {
-		return habitacion.getNumHabitacion() + "," +
-                habitacion.getNombreTipo() + "," +
-                habitacion.getNumCamas() + "," +
-                habitacion.getCostoPorNoche() + "," +
-                habitacion.isDisponible();
-
-	}
-
-	public static String convertHuesped(Huesped huesped) {
-		return huesped.getIdHuesped() + "," +
-                huesped.getNombre() + "," +
-                huesped.getApellidoPaterno() + "," +
-                huesped.getApellidoMaterno() + "," +
-                huesped.getNacionalidad() + "," +
-                huesped.getFechaNacimiento() + "," +
-                huesped.getGenero() + "," +
-                huesped.getNumeroMembresia() + "," +
-                huesped.getCorreos() + "," +
-                huesped.getTelefonos();
-	}
-
-
-    public static void guardarCSV(String nombreArchivo, String dato) {
-	File file = new File(nombreArchivo);
-	try {
-		file.getParentFile().mkdirs(); // Crear el directorio si no existe
-		if (!file.exists()) {
-			file.createNewFile(); // Crear el archivo si no existe
-		}
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
-
-        try (FileWriter writer = new FileWriter(nombreArchivo, true)) {
-		writer.append(dato).append("\n");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 	@Override
 	public void ejecutar(Scanner sc) throws InterruptedException {
 		int menuUno = 0;
@@ -164,11 +111,10 @@ public class AgregarElementos implements OpcionMenu {
 				Hotel hotel = new Hotel(idHotel++, nombre, calle, numeroInterior, numeroExterior, colonia, estado,
 						telefono, numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
 
-				String hotelCsv = convertHotel(hotel);
+				String hotelCsv =  CsvFileManager.convertHotel(hotel);
 
 				System.out.print(hotelCsv);
-
-				guardarCSV("Doc/Hotel.csv", hotelCsv);
+				CsvFileManager.guardarCSV("Doc/Hotel.csv", hotelCsv);
 
 				// List<Hotel> hoteles = new ArrayList<>();
 
@@ -218,11 +164,11 @@ public class AgregarElementos implements OpcionMenu {
 				 */
 				Habitacion habitacion = new Habitacion(idHabitacion++, nombreTipo, numCamas, costoNoche, true);
 
-				String habitacionCsv = convertHabitacion(habitacion);
+				String habitacionCsv = CsvFileManager.convertHabitacion(habitacion);
 
 				System.out.print(habitacionCsv);
 
-				guardarCSV("Doc/Habitacion.csv", habitacionCsv);
+				CsvFileManager.guardarCSV("Doc/Habitacion.csv", habitacionCsv);
 
 				// List<Habitacion> habitaciones = new ArrayList<>();
 
@@ -283,11 +229,11 @@ public class AgregarElementos implements OpcionMenu {
 						nacionalidad,
 						fechaNacimiento, genero, numeroMembresia, correo, telefono);
 
-				String huespedCsv = convertHuesped(huesped);
+				String huespedCsv = CsvFileManager.convertHuesped(huesped);
 
 				System.out.print(huespedCsv);
 
-				guardarCSV("Doc/Huesped.csv", huespedCsv);
+				CsvFileManager.guardarCSV("Doc/Huesped.csv", huespedCsv);
 				// List<Huesped> huespedes = new ArrayList<>();
 				// huespedes.add(huesped);
 
