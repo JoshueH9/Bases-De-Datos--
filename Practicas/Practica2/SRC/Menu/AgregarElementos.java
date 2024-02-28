@@ -1,16 +1,71 @@
 package Menu;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.File;
 
 import Entidades.Hotel;
 import Entidades.Huesped;
 import Entidades.Habitacion;
 
-
 public class AgregarElementos implements OpcionMenu {
+
+	public static String convertHotel (Hotel hotel) {
+		return hotel.getIdHotel() + "," +
+		hotel.getNombreEstablecimiento() + "," +
+                hotel.getCalle() + "," +
+                hotel.getNumeroInterior() + "," +
+                hotel.getNumeroExterior() + "," +
+                hotel.getColonia() + "," +
+                hotel.getEstado() + "," +
+                hotel.getTelefono() + "," +
+                hotel.getNumHabitaciones() + "," +
+                hotel.getNumHabitacionesDisponibles() + "," +
+                hotel.getNumHabitacionesOcupadas();
+	}
+
+	public static String convertHabitacion(Habitacion habitacion) {
+		return habitacion.getNumHabitacion() + "," +
+                habitacion.getNombreTipo() + "," +
+                habitacion.getNumCamas() + "," +
+                habitacion.getCostoPorNoche() + "," +
+                habitacion.isDisponible();
+
+	}
+
+	public static String convertHuesped(Huesped huesped) {
+		return huesped.getIdHuesped() + "," +
+                huesped.getNombre() + "," +
+                huesped.getApellidoPaterno() + "," +
+                huesped.getApellidoMaterno() + "," +
+                huesped.getNacionalidad() + "," +
+                huesped.getFechaNacimiento() + "," +
+                huesped.getGenero() + "," +
+                huesped.getNumeroMembresia() + "," +
+                huesped.getCorreo() + "," +
+                huesped.getTelefonos();
+	}
+
+
+    public static void guardarCSV(String nombreArchivo, String dato) {
+	File file = new File(nombreArchivo);
+	try {
+		file.getParentFile().mkdirs(); // Crear el directorio si no existe
+		if (!file.exists()) {
+			file.createNewFile(); // Crear el archivo si no existe
+		}
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+
+        try (FileWriter writer = new FileWriter(nombreArchivo, true)) {
+		writer.append(dato).append("\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 	@Override
 	public void ejecutar(Scanner sc) throws InterruptedException {
@@ -107,14 +162,19 @@ public class AgregarElementos implements OpcionMenu {
 				 * numHabitacionesDisponibles,int numHabitacionesOcupadas)
 				 */
 				Hotel hotel = new Hotel(idHotel++, nombre, calle, numeroInterior, numeroExterior, colonia, estado,
-						telefono,
-						numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
+						telefono, numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
 
-				List<Hotel> hoteles = new ArrayList<>();
+				String hotelCsv = convertHotel(hotel);
 
-				hoteles.add(hotel); // calle,numInteior,etc.
+				System.out.print(hotelCsv);
 
-				// agregaDato(algo);
+				guardarCSV("Doc/Hotel.csv", hotelCsv);
+
+				// List<Hotel> hoteles = new ArrayList<>();
+
+				// hoteles.add(hotel); // calle,numInteior,etc.
+
+
 				/*
 				 * El algo puede ser una lista abstracta
 				 * lista de Strings (Hay que convertir los int a string)
@@ -158,9 +218,15 @@ public class AgregarElementos implements OpcionMenu {
 				 */
 				Habitacion habitacion = new Habitacion(idHabitacion++, nombreTipo, numCamas, costoNoche, true);
 
-				List<Habitacion> habitaciones = new ArrayList<>();
+				String habitacionCsv = convertHabitacion(habitacion);
 
-				habitaciones.add(habitacion); // calle,numInteior,etc.
+				System.out.print(habitacionCsv);
+
+				guardarCSV("Doc/Habitacion.csv", habitacionCsv);
+
+				// List<Habitacion> habitaciones = new ArrayList<>();
+
+				// habitaciones.add(habitacion); // calle,numInteior,etc.
 				System.out.println(
 						Color.AZUL + "\nHabitacion ingresada con exito\n" + Color.BLANCO);
 				Thread.sleep(1500);
@@ -216,8 +282,14 @@ public class AgregarElementos implements OpcionMenu {
 				Huesped huesped = new Huesped(idHuesped++, nombreHuesped, apellidoPaterno, apellidoMaterno,
 						nacionalidad,
 						fechaNacimiento, genero, numeroMembresia, correo, telefono);
-				List<Huesped> huespedes = new ArrayList<>();
-				huespedes.add(huesped);
+
+				String huespedCsv = convertHuesped(huesped);
+
+				System.out.print(huespedCsv);
+
+				guardarCSV("Doc/Huesped.csv", huespedCsv);
+				// List<Huesped> huespedes = new ArrayList<>();
+				// huespedes.add(huesped);
 
 				System.out.println(
 						Color.AZUL + "\nHuesped ingresado con exito\n" + Color.BLANCO);

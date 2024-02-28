@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+
 /**
  * Clase para manejar archivos csv.
  * 
@@ -22,17 +24,27 @@ public class CsvFileManager {
 	private static final String FILENAME_HUESPEDES = "huespedes.csv";
 	private static final String FILENAME_CUARTOS = "cuartos.csv";
 
-	public static <T> void guardarCSV(String nombreArchivo, List<T> datos) {
-		try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
-			for (int i = 0; i < datos.size(); i++) {
-				CharSequence fila = "";
-				writer.write(String.join(",", fila));
-				writer.newLine();
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+    public static void guardarCSV(String nombreArchivo, List<String> datos) {
+        try (FileWriter writer = new FileWriter(nombreArchivo)) {
+            for (String dato : datos) {
+                writer.append(dato).append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+	// public static <T> void guardarCSV(String nombreArchivo, List<T> datos) {
+	// 	try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
+	// 		for (int i = 0; i < datos.size(); i++) {
+	// 			CharSequence fila = "";
+	// 			writer.write(String.join(",", fila));
+	// 			writer.newLine();
+	// 		}
+	// 	} catch (IOException e) {
+	// 		e.printStackTrace();
+	// 	}
+	// }
 
 	public static List<String[]> leerCSV(String nombreArchivo) {
 		List<String[]> datos = new ArrayList<>();
