@@ -356,15 +356,29 @@ public class EditarElementos implements OpcionMenu {
 						int numeroCamas = sc.nextInt();
 						habitacion.setNumCamas(numeroCamas);
 						break;
+
+					case 4:
+						System.out.println(Color.AZUL + "\nDisponbilidad de la habitacion: " + Color.BLANCO
+								+ habitacion.isDisponible());
+						System.out.print(Color.AMARILLO
+								+ "\nCambia la disponibilidad de la habitacion(1 = Disponible, 0 = No disponible): "
+								+ Color.VERDE);
+						int disponibilidad = sc.nextInt();
+						if (disponibilidad >= 1) {
+							habitacion.setNumCamas(1);
+						} else {
+							habitacion.setNumCamas(0);
+						}
+						break;
 					default:
 						throw new InputMismatchException();
 				}
 				System.out.println(
-						Color.AZUL + "\nhabitacion editado con exito\n" + Color.BLANCO);
+						Color.AZUL + "\nHabitacion editada con exito\n" + Color.BLANCO);
 				Thread.sleep(1500);
 
 			} catch (InputMismatchException ime) {
-				System.out.println(Color.ROJO + "\nERROR: Ingresa un numero. del 1 al 11\n" + Color.BLANCO);
+				System.out.println(Color.ROJO + "\nERROR: Ingresa un numero. del 1 al 4\n" + Color.BLANCO);
 				error = true;
 				Thread.sleep(1500);
 				sc.nextLine();
@@ -376,13 +390,113 @@ public class EditarElementos implements OpcionMenu {
 		Boolean error = false;
 		do {
 			try {
+				System.out.println(Color.VERDE + "\nElije una de las siguientes opciones para editar:\n\n "
+						+ Color.AMARILLO + "1) " + Color.VERDE + "Editar el nombre del huesped.\n "
+						+ Color.AMARILLO + "2) " + Color.VERDE + "Editar apellido paterno del huesped.\n "
+						+ Color.AMARILLO + "3) " + Color.VERDE + "Editar apellido materno del huesped.\n"
+						+ Color.AMARILLO + "4) " + Color.VERDE + "Editar nacionalidad del huesped\n"
+						+ Color.AMARILLO + "5) " + Color.VERDE + "Editar fecha de nacimiento del huesped\n"
+						+ Color.AMARILLO + "6) " + Color.VERDE + "Editar genero del huesped\n"
+						+ Color.AMARILLO + "7) " + Color.VERDE + "Editar numero de membresia del huesped\n"
+						+ Color.AMARILLO + "8) " + Color.VERDE + "Editar correo del huesped\n"
+						+ Color.AMARILLO + "9) " + Color.VERDE + "Editar telefono del huesped\n"
+						+ Color.AMARILLO + "10) " + Color.VERDE + "Salir del menú.");
+
+				System.out.print(Color.AMARILLO + "\n Opcion: " + Color.VERDE);
+				int menuDos = sc.nextInt();
+
+				switch (menuDos) {
+					case 1: // Nombre
+						System.out.println(Color.AZUL + "\nNombre completo actual del huesped: " + Color.BLANCO
+								+ huesped.getNombre() + " " + huesped.getApellidoPaterno() + " "
+								+ huesped.getApellidoMaterno());
+						System.out.print(Color.AMARILLO + "\nIngresa el nuevo nombre del huesped: "
+								+ Color.VERDE);
+						String nombre = sc.next();
+						huesped.setNombre(nombre);
+						break;
+					case 2: // Apellido paterno
+						System.out.println(Color.AZUL + "\nNombre completo actual del huesped: " + Color.BLANCO
+								+ huesped.getNombre() + " " + huesped.getApellidoPaterno() + " "
+								+ huesped.getApellidoMaterno());
+						System.out.print(Color.AMARILLO + "\nIngresa el nuevo apellido paterno del huesped: "
+								+ Color.VERDE);
+						String apellidoPaterno = sc.next();
+						huesped.setApellidoPaterno(apellidoPaterno);
+						break;
+					case 3: // Costo por noche
+						System.out.println(Color.AZUL + "\nNombre completo actual del huesped: " + Color.BLANCO
+								+ huesped.getNombre() + " " + huesped.getApellidoPaterno() + " "
+								+ huesped.getApellidoMaterno());
+						System.out.print(Color.AMARILLO + "\nIngresa el nuevo apellido materno del huesped: "
+								+ Color.VERDE);
+						String apellidoMaterno = sc.next();
+						huesped.setApellidoMaterno(apellidoMaterno);
+
+					case 4:
+						System.out.println(Color.AZUL + "\nNacionalidad actual del huesped: " + Color.BLANCO
+								+ huesped.getNacionalidad());
+						System.out.print(Color.AMARILLO + "\nIngresa la nueva nacionalidad del huesped: "
+								+ Color.VERDE);
+						String nacionalidad = sc.next();
+						huesped.setNacionalidad(nacionalidad);
+						break;
+					case 5:
+						System.out.println(Color.AZUL + "\nFecha de nacimiento actual del huesped: " + Color.BLANCO
+								+ huesped.getFechaNacimiento());
+						System.out.print(Color.AMARILLO + "\nIngresa la nueva fecha de nacimiento del huesped: "
+								+ Color.VERDE);
+						String fechaNacimiento = sc.next();
+						huesped.setFechaNacimiento(fechaNacimiento);
+						break;
+					case 6:
+						System.out.println(Color.AZUL + "\nGenero actual del huesped: " + Color.BLANCO
+								+ huesped.getGenero());
+						System.out.print(Color.AMARILLO + "\nIngresa el nuevo genero del huesped: "
+								+ Color.VERDE);
+						String genero = sc.next();
+						huesped.setGenero(genero);
+						;
+						break;
+					case 7:
+						System.out.println(Color.AZUL + "\nNumero de membresia actual del huesped: " + Color.BLANCO
+								+ huesped.getNumeroMembresia());
+						System.out.print(Color.AMARILLO + "\nIngresa el nuevo numero de membresia del huesped: "
+								+ Color.VERDE);
+						int numMembresia = sc.nextInt();
+						huesped.setNumeroMembresia(numMembresia);
+						break;
+					case 8:
+						System.out.println(Color.AZUL + "\nCorreo actual del huesped: " + Color.BLANCO
+								+ huesped.getNumeroMembresia());
+						System.out.print(Color.AMARILLO + "\nIngresa el nuevo correo del huesped: "
+								+ Color.VERDE);
+						String correo = sc.next();
+						huesped.setCorreos(correo);
+						break;
+					case 9:
+						System.out.println(Color.AZUL + "\nTelefono actual del huesped: " + Color.BLANCO
+								+ huesped.getNumeroMembresia());
+						System.out.print(Color.AMARILLO + "\nIngresa el nuevo telefono del huesped: "
+								+ Color.VERDE);
+						int telefono = sc.nextInt();
+						huesped.setTelefonos(telefono);
+						break;
+					case 10:
+						System.out.println("Adios");
+						break;
+
+					default:
+						throw new InputMismatchException();
+				}
+				System.out.println(
+						Color.AZUL + "\nHabitacion editada con exito\n" + Color.BLANCO);
+				Thread.sleep(1500);
 
 			} catch (InputMismatchException ime) {
-				System.out.println(
-						Color.ROJO + "\nERROR: No se encontró ninguna huesped con el identificador proporcionado.\n"
-								+ Color.BLANCO);
-				Thread.sleep(1500);
+				System.out.println(Color.ROJO + "\nERROR: Ingresa un numero. del 1 al 10\n" + Color.BLANCO);
 				error = true;
+				Thread.sleep(1500);
 				sc.nextLine();
 			}
 		} while (error);

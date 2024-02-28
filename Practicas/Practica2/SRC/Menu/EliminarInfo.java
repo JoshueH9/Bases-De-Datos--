@@ -130,12 +130,6 @@ public class EliminarInfo implements OpcionMenu {
 						+ Color.VERDE);
 				int id = sc.nextInt();
 
-				/*
-				 * Aqui nadamas se manda el archivo de donde se va a eliminar y el id del
-				 * elemento
-				 */
-				// eliminaElemento(Huesped.csv, id);
-
 				System.out.println(
 						Color.AZUL + "\nElemento eliminado con exito\n" + Color.BLANCO);
 				Thread.sleep(1500);
