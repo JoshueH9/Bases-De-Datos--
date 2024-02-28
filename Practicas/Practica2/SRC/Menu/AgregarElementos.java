@@ -5,6 +5,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
+
 import Entidades.Hotel;
 import Entidades.Huesped;
 import Entidades.Habitacion;
@@ -23,6 +24,7 @@ public class AgregarElementos implements OpcionMenu {
 
 	@Override
 	public void ejecutar(Scanner sc) throws InterruptedException {
+
 		int menuUno = 0;
 		do {
 			try {
@@ -115,9 +117,8 @@ public class AgregarElementos implements OpcionMenu {
 				 * List<Integer> telefono, int numHabitaciones, int
 				 * numHabitacionesDisponibles,int numHabitacionesOcupadas)
 				 */
-				Hotel hotel = new Hotel(idHotel++, nombre, calle, numeroInterior, numeroExterior, colonia, estado,
-						telefono,
-						numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
+				Hotel hotel = new Hotel(nombre, calle, numeroInterior, numeroExterior, colonia, estado,
+						telefono, numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
 
 				//List<Hotel> hoteles = new ArrayList<>();
 

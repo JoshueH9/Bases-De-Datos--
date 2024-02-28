@@ -35,11 +35,14 @@ public class Main{
     /* Ruta de carpetas donde se encuentran los archivos .csv */
     public static final String rutaAbsoluta = "SRC/Doc/";
 
-    public static void main(String[] args) throws InterruptedException{
-        menu();
-    }
+    public static List<Hotel> hotelGlobal;
+    public static List<Huesped> huespedGlobal;    
+    public static List<Habitacion> habitacionGlobal;
 
-    public static void menu() throws InterruptedException{
+    public static void main(String[] args) throws InterruptedException{
+
+        CsvFileManager.cargarBaseDeDatos();
+
         Scanner sc = new Scanner(System.in);
         int menu = 0;
 
@@ -99,7 +102,32 @@ public class Main{
             }
         } while (menu != 5);
     }
-}
 
+    public List<Hotel> getListaHotel(List<Hotel> hotelGlobal){
+        return hotelGlobal;
+    }
+
+    public List<Huesped> getListaHuesped( List<Huesped> huespedGlobal){
+        return huespedGlobal;
+    }
+
+    public List<Habitacion> getListaHabitacion(List<Habitacion> habitacionGlobal){
+        return habitacionGlobal;
+    }
+
+    public void setListaHotel(List<Hotel> hotelGlobal){
+        this.hotelGlobal = hotelGlobal;
+    }
+
+    public void setListaHuesped( List<Huesped> huespedGlobal){
+        this.huespedGlobal = huespedGlobal;
+    }
+
+    public void setListaHabitacion(List<Habitacion> habitacionGlobal){
+
+        this.habitacionGlobal = habitacionGlobal;
+    }
+
+    }
 
 

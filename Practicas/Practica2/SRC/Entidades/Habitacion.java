@@ -13,19 +13,19 @@ package Entidades;
 public class Habitacion {
 
 	/* Numero de identificacion de la habitacion (Identificador) */
-	private int numHabitacion;
+	private Integer numHabitacion;
 
 	/* Nombre del tipo de habitacion */
 	private String nombreTipo;
 
 	/* Numero de camas que tiene la habitacion */
-	private int numCamas;
+	private Integer numCamas;
 
 	/* Costo que tiene la habitacion por noche */
-	private int costoPorNoche;
+	private Integer costoPorNoche;
 
 	/* Determina si la habitación esta disponible */
-	private boolean disponible;
+	private Integer disponible;
 
 	/**
 	 * Constructor de una Habitacion
@@ -36,8 +36,8 @@ public class Habitacion {
 	 * @param costoPorNoche Costo que tiene la habitacion por noche
 	 * @param disponible    Determina si la habitación esta disponible
 	 */
-	public Habitacion(int numHabitacion, String nombreTipo, int numCamas, int costoPorNoche, boolean disponible) {
-		this.numHabitacion = numHabitacion;
+	public Habitacion(String nombreTipo, Integer numCamas, Integer costoPorNoche, Integer disponible) {
+		this.numHabitacion++;
 		this.nombreTipo = nombreTipo;
 		this.numCamas = numCamas;
 		this.costoPorNoche = costoPorNoche;
@@ -51,7 +51,7 @@ public class Habitacion {
 	 * 
 	 * @return el numero de la habitacion
 	 */
-	public int getNumHabitacion() {
+	public Integer getNumHabitacion() {
 		return numHabitacion;
 	}
 
@@ -69,7 +69,7 @@ public class Habitacion {
 	 * 
 	 * @return el numero de camas de la habitacion
 	 */
-	public int getNumCamas() {
+	public Integer getNumCamas() {
 		return numCamas;
 	}
 
@@ -78,7 +78,7 @@ public class Habitacion {
 	 * 
 	 * @return el costo de la habitacion por noche
 	 */
-	public int getCostoPorNoche() {
+	public Integer getCostoPorNoche() {
 		return costoPorNoche;
 	}
 
@@ -87,7 +87,7 @@ public class Habitacion {
 	 * 
 	 * @return si la habitacion esta disponible
 	 */
-	public boolean isDisponible() {
+	public Integer isDisponible() {
 		return disponible;
 	}
 
@@ -107,7 +107,7 @@ public class Habitacion {
 	 * 
 	 * @param numCamas nuevo numero de camas de la habitacion.
 	 */
-	public void setNumCamas(int numCamas) {
+	public void setNumCamas(Integer numCamas) {
 		this.numCamas = numCamas;
 	}
 
@@ -116,7 +116,7 @@ public class Habitacion {
 	 * 
 	 * @param costoPorNoche nuevo costo por noche.
 	 */
-	public void setCostoPorNoche(int costoPorNoche) {
+	public void setCostoPorNoche(Integer costoPorNoche) {
 		this.costoPorNoche = costoPorNoche;
 	}
 
@@ -125,7 +125,7 @@ public class Habitacion {
 	 * 
 	 * @param disponible nuevo estatus de la habitacion.
 	 */
-	public void setDisponible(boolean disponible) {
+	public void setDisponible(Integer disponible) {
 		this.disponible = disponible;
 	}
 }

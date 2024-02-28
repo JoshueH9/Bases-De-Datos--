@@ -16,7 +16,7 @@ import java.util.List;
 public class Hotel {
 
 	/* Numero identificador del hotel (Identificador) */
-	private int idHotel;
+	private Integer idHotel = 1;
 
 	/* Nombre del hotel */
 	private String nombreEstablecimiento;
@@ -37,16 +37,16 @@ public class Hotel {
 	private String estado;
 
 	/* Numeros de telefono del hotel */
-	private int telefono;
+	private Integer telefono;
 
 	/* Numero de habitaciones totales del hotel */
-	private int numHabitaciones;
+	private Integer numHabitaciones;
 
 	/* Numero de habitaciones disponibles del hotel */
-	private int numHabitacionesDisponibles;
+	private Integer numHabitacionesDisponibles;
 
 	/* Numero de habitaciones ocupadas del hotel */
-	private int numHabitacionesOcupadas;
+	private Integer numHabitacionesOcupadas;
 
 	/**
 	 * Constructor de un Hotel
@@ -64,10 +64,10 @@ public class Hotel {
 	 *                                   hotel
 	 * @param numHabitacionesOcupadas    Numero de habitaciones ocupadas del hotel
 	 */
-	public Hotel(int idHotel, String nombreEstablecimiento, String calle, String numeroInterior, String numeroExterior,
-			String colonia, String estado, int telefono, int numHabitaciones, int numHabitacionesDisponibles,
-			int numHabitacionesOcupadas) {
-		this.idHotel = idHotel;
+	public Hotel(String nombreEstablecimiento, String calle, String numeroInterior, String numeroExterior,
+			String colonia, String estado, Integer telefono, Integer numHabitaciones, Integer numHabitacionesDisponibles,
+			Integer numHabitacionesOcupadas) {
+		this.idHotel++;
 		this.nombreEstablecimiento = nombreEstablecimiento;
 		this.calle = calle;
 		this.numeroInterior = numeroInterior;
@@ -87,7 +87,7 @@ public class Hotel {
 	 * 
 	 * @return el identificador del hotel.
 	 */
-	public int getIdHotel() {
+	public Integer getIdHotel() {
 		return idHotel;
 	}
 
@@ -150,7 +150,7 @@ public class Hotel {
 	 * 
 	 * @return los telefonos del hotel.
 	 */
-	public int getTelefono() {
+	public Integer getTelefono() {
 		return telefono;
 	}
 
@@ -159,7 +159,7 @@ public class Hotel {
 	 * 
 	 * @return el numero total de habitaciones del hotel.
 	 */
-	public int getNumHabitaciones() {
+	public Integer getNumHabitaciones() {
 		return numHabitaciones;
 	}
 
@@ -168,7 +168,7 @@ public class Hotel {
 	 * 
 	 * @return el numero de habitaciones disponibles que tiene el hotel.
 	 */
-	public int getNumHabitacionesDisponibles() {
+	public Integer getNumHabitacionesDisponibles() {
 		return numHabitacionesDisponibles;
 	}
 
@@ -177,7 +177,7 @@ public class Hotel {
 	 * 
 	 * @return el numero de habitaciones ocupadas que tiene el hotel.
 	 */
-	public int getNumHabitacionesOcupadas() {
+	public Integer getNumHabitacionesOcupadas() {
 		return numHabitacionesOcupadas;
 	}
 
@@ -242,7 +242,7 @@ public class Hotel {
 	 * 
 	 * @param telefono
 	 */
-	public void setTelefonos(int telefono) {
+	public void setTelefonos(Integer telefono) {
 		this.telefono = telefono;
 	}
 
@@ -251,7 +251,7 @@ public class Hotel {
 	 * 
 	 * @param numHabitaciones
 	 */
-	public void setNumHabitaciones(int numHabitaciones) {
+	public void setNumHabitaciones(Integer numHabitaciones) {
 		this.numHabitaciones = numHabitaciones;
 	}
 
@@ -260,7 +260,7 @@ public class Hotel {
 	 * 
 	 * @param numHabitacionesDisponibles
 	 */
-	public void setNumHabitacionesDisponibles(int numHabitacionesDisponibles) {
+	public void setNumHabitacionesDisponibles(Integer numHabitacionesDisponibles) {
 		this.numHabitacionesDisponibles = numHabitacionesDisponibles;
 	}
 
@@ -269,7 +269,7 @@ public class Hotel {
 	 * 
 	 * @param numHabitacionesOcupadas
 	 */
-	public void setNumHabitacionesOcupadas(int numHabitacionesOcupadas) {
+	public void setNumHabitacionesOcupadas(Integer numHabitacionesOcupadas) {
 		this.numHabitacionesOcupadas = numHabitacionesOcupadas;
 	}
 }

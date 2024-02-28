@@ -15,7 +15,7 @@ import java.util.List;
 public class Huesped {
 
 	/* Numero identificador del cliente (Identificador) */
-	private int idHuesped;
+	private Integer idHuesped;
 
 	/* Nombre del huesped */
 	private String nombre;
@@ -36,13 +36,13 @@ public class Huesped {
 	private String genero;
 
 	/* Numero de membresia del huesped */
-	private int numeroMembresia;
+	private Integer numeroMembresia;
 
 	/* Correos electronicos del huesped */
 	private String correo;
 
 	/* Numeros de telefono del huesped */
-	private int telefono;
+	private Integer telefono;
 
 	/**
 	 * Constructor de un Huesped
@@ -58,10 +58,10 @@ public class Huesped {
 	 * @param correo          Correos electronicos del huesped
 	 * @param telefono        Lista de telefonos del huesped
 	 */
-	public Huesped(int idHuesped, String nombre, String apellidoPaterno, String apellidoMaterno, String nacionalidad,
-			String fechaNacimiento, String genero, int numeroMembresia, String correo,
-			int telefono) {
-		this.idHuesped = idHuesped;
+	public Huesped(String nombre, String apellidoPaterno, String apellidoMaterno, String nacionalidad,
+			String fechaNacimiento, String genero, Integer numeroMembresia, String correo,
+			Integer telefono) {
+		this.idHuesped++;
 		this.nombre = nombre;
 		this.apellidoPaterno = apellidoPaterno;
 		this.apellidoMaterno = apellidoMaterno;
@@ -80,7 +80,7 @@ public class Huesped {
 	 * 
 	 * @return el identificador del huesped.
 	 */
-	public int getIdHuesped() {
+	public Integer getIdHuesped() {
 		return idHuesped;
 	}
 
@@ -143,7 +143,7 @@ public class Huesped {
 	 * 
 	 * @return el número de membresia del huesped.
 	 */
-	public int getNumeroMembresia() {
+	public Integer getNumeroMembresia() {
 		return numeroMembresia;
 	}
 
@@ -161,7 +161,7 @@ public class Huesped {
 	 * 
 	 * @return la lista de telefonos del huesped.
 	 */
-	public int getTelefonos() {
+	public Integer getTelefonos() {
 		return telefono;
 	}
 
@@ -221,7 +221,7 @@ public class Huesped {
 	 * 
 	 * @param numeroMembresia
 	 */
-	public void setNumeroMembresia(int numeroMembresia) {
+	public void setNumeroMembresia(Integer numeroMembresia) {
 		this.numeroMembresia = numeroMembresia;
 	}
 
@@ -239,7 +239,7 @@ public class Huesped {
 	 * 
 	 * @param telefono
 	 */
-	public void setTelefonos(int telefono) {
+	public void setTelefonos(Integer telefono) {
 		this.telefono = telefono;
 	}
 }
