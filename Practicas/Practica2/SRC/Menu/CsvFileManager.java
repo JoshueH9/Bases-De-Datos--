@@ -63,7 +63,7 @@ public class CsvFileManager {
 	}
 
 	public static void cargarBaseDeDatos() {
-		String rutaAbsoluta = "Practicas/Practica2/SRC/Doc/";
+		String rutaAbsoluta = "SRC/Doc/";
 		FileReader fileReader = null;
 		BufferedReader bufferedReader = null;
 
@@ -166,14 +166,14 @@ public class CsvFileManager {
 		List<Huesped> huespedes = Listas.getListaHuesped();
 
 		// Exportar hoteles
-		exportarEntidades("Practicas/Practica2/SRC/Doc/Hotel.csv", hoteles, CsvFileManager::convertHotel);
+		exportarEntidades("SRC/Doc/Hotel.csv", hoteles, CsvFileManager::convertHotel);
 
 		// Exportar habitaciones
-		exportarEntidades("Practicas/Practica2/SRC/Doc/Habitacion.csv", habitaciones,
+		exportarEntidades("SRC/Doc/Habitacion.csv", habitaciones,
 				CsvFileManager::convertHabitacion);
 
 		// Exportar huéspedes
-		exportarEntidades("Practicas/Practica2/SRC/Doc/Huesped.csv", huespedes, CsvFileManager::convertHuesped);
+		exportarEntidades("SRC/Doc/Huesped.csv", huespedes, CsvFileManager::convertHuesped);
 	}
 
 	private static <T> void exportarEntidades(String nombreArchivo, List<T> entidades,
