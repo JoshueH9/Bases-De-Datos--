@@ -15,7 +15,7 @@ import java.util.List;
 public class Huesped {
 
 	/* Numero identificador del cliente (Identificador) */
-	private Integer idHuesped;
+	private Integer idHuesped = 1;
 
 	/* Nombre del huesped */
 	private String nombre;

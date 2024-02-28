@@ -13,7 +13,7 @@ package Entidades;
 public class Habitacion {
 
 	/* Numero de identificacion de la habitacion (Identificador) */
-	private Integer numHabitacion;
+	private Integer numHabitacion = 1;
 
 	/* Nombre del tipo de habitacion */
 	private String nombreTipo;

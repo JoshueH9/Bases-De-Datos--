@@ -27,6 +27,7 @@ public class EditarElementos implements OpcionMenu {
 	int idHotel = 1;
 	int idHabitacion = 1;
 	int idHuesped = 1;
+/*
 	Hotel hotel1 = new Hotel("Hotel1", "calle1", null, null, null, null, 0, 0, 0, 0);
 	Hotel hotel2 = new Hotel(null, null, null, null, null, null, 0, 0, 0, 0);
 	Hotel hotel3 = new Hotel(null, null, null, null, null, null, 0, 0, 0, 0);
@@ -36,7 +37,7 @@ public class EditarElementos implements OpcionMenu {
 	Huesped huesped1 = new Huesped("Huesped1", null, null, null, null, null, idHotel, null, idHabitacion);
 	Huesped huesped2 = new Huesped("Huesped2", null, null, null, null, null, idHotel, null, idHabitacion);
 	Huesped huesped3 = new Huesped("Huesped3", null, null, null, null, null, idHotel, null, idHabitacion);
-
+*/
 	List<Hotel> hoteles = new ArrayList<Hotel>();
 	List<Habitacion> habitaciones = new ArrayList<Habitacion>();
 	List<Huesped> huespedes = new ArrayList<Huesped>();
@@ -46,7 +47,7 @@ public class EditarElementos implements OpcionMenu {
 		int menuUno = 0;
 		/*
 		 * Reemplazar despues por los datos reales
-		 */
+
 		hoteles.add(hotel1);
 		hoteles.add(hotel2);
 		hoteles.add(hotel3);
@@ -56,6 +57,7 @@ public class EditarElementos implements OpcionMenu {
 		huespedes.add(huesped1);
 		huespedes.add(huesped2);
 		huespedes.add(huesped3);
+		*/
 		do {
 			try {
 				System.out.println(Color.VERDE + "\nElije una de las siguientes opciones:\n\n "

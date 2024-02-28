@@ -98,11 +98,10 @@ public class CsvFileManager {
 		try {
 			fileReader = new FileReader("SRC/Doc/Huesped.csv");
 			bufferedReader = new BufferedReader(fileReader);
-			String linea;
-			while ((linea = bufferedReader.readLine()) != null) {
-				String[] arreglo = linea.split(",");
-				huesped.add(new Huesped(arreglo[0], arreglo[1], arreglo[2], arreglo[3], arreglo[4], arreglo[5], 
-				Integer.valueOf(arreglo[7]), arreglo[8], Integer.valueOf(arreglo[9])));
+			String linea2;
+			while ((linea2 = bufferedReader.readLine()) != null) {
+				String[] arreglo2 = linea2.split(",");
+				huesped.add(new Huesped(arreglo2[0], arreglo2[1], arreglo2[2], arreglo2[3], arreglo2[4], arreglo2[5], Integer.valueOf(arreglo2[6]), arreglo2[7], Integer.valueOf(arreglo2[8])));
 			}
 			//Integer.valueOf(arreglo[1])
 
@@ -124,10 +123,10 @@ public class CsvFileManager {
 		try {
 			fileReader = new FileReader("SRC/Doc/Habitacion.csv");
 			bufferedReader = new BufferedReader(fileReader);
-			String linea;
-			while ((linea = bufferedReader.readLine()) != null) {
-				String[] arreglo = linea.split(",");
-				habitacion.add(new Habitacion(arreglo[0], Integer.valueOf(arreglo[1]), Integer.valueOf(arreglo[2]), Integer.valueOf(arreglo[3])));
+			String linea3;
+			while ((linea3 = bufferedReader.readLine()) != null) {
+				String[] arreglo3 = linea3.split(",");
+				habitacion.add(new Habitacion(arreglo3[0], Integer.valueOf(arreglo3[1]), Integer.valueOf(arreglo3[2]), Integer.valueOf(arreglo3[3])));
 			}
 			//Integer.valueOf(arreglo[1])
 
