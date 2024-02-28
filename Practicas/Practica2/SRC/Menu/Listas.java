@@ -1,3 +1,4 @@
+package Menu;
 import java.util.List;
 
 import Entidades.Habitacion;
@@ -13,15 +14,15 @@ public class Listas {
 
 	}
 
-	public List<Hotel> getListaHotel(List<Hotel> hotelGlobal) {
+	public static List<Hotel> getListaHotel() {
 		return hotelGlobal;
 	}
 
-	public List<Huesped> getListaHuesped(List<Huesped> huespedGlobal) {
+	public static List<Huesped> getListaHuesped() {
 		return huespedGlobal;
 	}
 
-	public List<Habitacion> getListaHabitacion(List<Habitacion> habitacionGlobal) {
+	public static List<Habitacion> getListaHabitacion() {
 		return habitacionGlobal;
 	}
 

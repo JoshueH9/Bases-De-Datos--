@@ -118,6 +118,11 @@ public class AgregarElementos implements OpcionMenu {
 				Hotel hotel = new Hotel(nombre, calle, numeroInterior, numeroExterior, colonia, estado,
 						telefono, numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
 
+				Listas l = new Listas();
+				List<Hotel> hoteles = Listas.getListaHotel();
+				hoteles.add(hotel); 
+				l.setListaHotel(hoteles);
+
 				// List<Hotel> hoteles = new ArrayList<>();
 
 				// hoteles.add(hotel);

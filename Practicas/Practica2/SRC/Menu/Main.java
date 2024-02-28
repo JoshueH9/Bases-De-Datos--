@@ -1,3 +1,4 @@
+package Menu;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -11,14 +12,6 @@ import java.util.Scanner;
 import Entidades.Hotel;
 import Entidades.Huesped;
 import Entidades.Habitacion;
-
-import Menu.AgregarElementos;
-import Menu.ConsultarElementos;
-import Menu.EditarElementos;
-import Menu.EliminarInfo;
-
-import Menu.Color;
-import Menu.OpcionMenu;
 
 /**
  * Clase principal donde crearemos el menú para interactuar con la base de

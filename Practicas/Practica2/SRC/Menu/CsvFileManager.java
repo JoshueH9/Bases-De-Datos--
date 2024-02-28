@@ -1,3 +1,4 @@
+package Menu;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -63,7 +64,7 @@ public class CsvFileManager {
 		FileReader fileReader = null;
 		BufferedReader bufferedReader = null;
 
-		Main m = new Main();
+		Listas l = new Listas();
 		List<Hotel> hotel = new ArrayList<>();
 		List<Huesped> huesped = new ArrayList<>(); 
 		List<Habitacion> habitacion = new ArrayList<>();
@@ -145,9 +146,9 @@ public class CsvFileManager {
 			}
 		}
 
-		m.setListaHotel(hotel);
-		m.setListaHuesped(huesped);
-		m.setListaHabitacion(habitacion);
+		l.setListaHotel(hotel);
+		l.setListaHuesped(huesped);
+		l.setListaHabitacion(habitacion);
 
 	}
 
