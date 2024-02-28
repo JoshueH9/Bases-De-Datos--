@@ -145,7 +145,6 @@ public class AgregarElementos implements OpcionMenu {
 		} while (error);
 	}
 
-
 	private void agregarHabitacion(Scanner sc) throws InterruptedException {
 		Boolean error = false;
 		int idHabitacion = 0;
