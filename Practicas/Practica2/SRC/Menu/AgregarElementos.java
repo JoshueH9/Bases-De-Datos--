@@ -71,6 +71,7 @@ public class AgregarElementos implements OpcionMenu {
 						+ "\n---------------- Ingresa los datos del hotel ----------------\n");
 				System.out.print(Color.AMARILLO + "\nIngresa el nombre del hotel: "
 						+ Color.VERDE);
+				//sc.nextLine();
 				String nombre = sc.next();
 				System.out.print(Color.AMARILLO + "\nIngresa la calle del hotel: "
 						+ Color.VERDE);
@@ -90,20 +91,17 @@ public class AgregarElementos implements OpcionMenu {
 						+ "\nIngresa el estado del pais donde se encuenta el hotel: "
 						+ Color.VERDE);
 				String estado = sc.next();
-				System.out
-						.print(Color.AMARILLO + "\nIngresa el telefono del hotel: "
+				System.out.print(Color.AMARILLO + "\nIngresa el telefono del hotel: "
 								+ Color.VERDE);
 				int telefono = sc.nextInt();
 				System.out.print(Color.AMARILLO
 						+ "\nIngresa el numero de habitaciones totales del hotel: "
 						+ Color.VERDE);
 				int numHabitaciones = sc.nextInt();
-
 				System.out.print(Color.AMARILLO
 						+ "\nIngresa el numero de habitaciones disponibles del hotel: "
 						+ Color.VERDE);
 				int numHabitacionesDisponibles = sc.nextInt();
-
 				System.out.print(Color.AMARILLO
 						+ "\nIngresa el numero de habitaciones ocupadas del hotel: "
 						+ Color.VERDE);
@@ -115,7 +113,8 @@ public class AgregarElementos implements OpcionMenu {
 				 * List<Integer> telefono, int numHabitaciones, int
 				 * numHabitacionesDisponibles,int numHabitacionesOcupadas)
 				 */
-				Hotel hotel = new Hotel(nombre, calle, numeroInterior, numeroExterior, colonia, estado,
+				
+				  Hotel hotel = new Hotel(nombre, calle, numeroInterior, numeroExterior, colonia, estado,
 						telefono, numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
 
 				Listas l = new Listas();
@@ -123,19 +122,7 @@ public class AgregarElementos implements OpcionMenu {
 				hoteles.add(hotel); 
 				l.setListaHotel(hoteles);
 
-				// List<Hotel> hoteles = new ArrayList<>();
-
-				// hoteles.add(hotel);
-
-				// agregaDato(hotel);
-				/*
-				 * El algo puede ser una lista abstracta
-				 * lista de Strings (Hay que convertir los int a string)
-				 * array de strings (hay que cambiar los int a string)
-				 * O tambien puede ser el objeto directamente, este creo que es el mas
-				 * optimo pero quiza el mas complicado.
-				 */
-
+				error = false;
 				System.out.println(
 						Color.AZUL + "\nHotel ingresado con exito\n" + Color.BLANCO);
 				Thread.sleep(1500);
@@ -144,7 +131,7 @@ public class AgregarElementos implements OpcionMenu {
 						Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);
 				Thread.sleep(1500);
 				error = true;
-				sc.nextLine();
+				sc.next();
 			}
 		} while (error);
 	}
@@ -171,9 +158,12 @@ public class AgregarElementos implements OpcionMenu {
 				 */
 				Habitacion habitacion = new Habitacion(nombreTipo, numCamas, costoNoche, 1);
 
-				List<Habitacion> habitaciones = new ArrayList<>();
-
-				habitaciones.add(habitacion); // calle,numInteior,etc.
+				Listas l = new Listas();
+				List<Habitacion> habitaciones = Listas.getListaHabitacion();
+				habitaciones.add(habitacion); 
+				l.setListaHabitacion(habitaciones);
+				
+				error = false;
 				System.out.println(
 						Color.AZUL + "\nHabitacion ingresada con exito\n" + Color.BLANCO);
 				Thread.sleep(1500);
@@ -182,7 +172,7 @@ public class AgregarElementos implements OpcionMenu {
 						Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);
 				Thread.sleep(1500);
 				error = true;
-				sc.nextLine();
+				sc.next();
 			}
 		} while (error);
 	}
@@ -227,11 +217,14 @@ public class AgregarElementos implements OpcionMenu {
 				 * int numeroMembresia, List<String> correo, List<Integer> telefono)
 				 */
 				Huesped huesped = new Huesped(nombreHuesped, apellidoPaterno, apellidoMaterno,
-						nacionalidad,
-						fechaNacimiento, genero, numeroMembresia, correo, telefono);
-				List<Huesped> huespedes = new ArrayList<>();
-				huespedes.add(huesped);
+						nacionalidad, fechaNacimiento, genero, numeroMembresia, correo, telefono);
 
+				Listas l = new Listas();
+				List<Huesped> huespedes = Listas.getListaHuesped();
+				huespedes.add(huesped); 
+				l.setListaHuesped(huespedes);
+
+				error = false;
 				System.out.println(
 						Color.AZUL + "\nHuesped ingresado con exito\n" + Color.BLANCO);
 				Thread.sleep(1500);
@@ -240,7 +233,7 @@ public class AgregarElementos implements OpcionMenu {
 						Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);
 				Thread.sleep(1500);
 				error = true;
-				sc.nextLine();
+				sc.next();
 			}
 		} while (error);
 	}
