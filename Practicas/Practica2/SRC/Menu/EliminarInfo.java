@@ -35,7 +35,7 @@ public class EliminarInfo implements OpcionMenu {
 				menuUno = sc.nextInt();
 
 				switch (menuUno) {
-					case 1: 
+					case 1:
 						eliminarHotel(sc);
 						break;
 
@@ -47,13 +47,13 @@ public class EliminarInfo implements OpcionMenu {
 						eliminarHuesped(sc);
 						break;
 
-                    case 4: // Solo regresa al menu inicial.
-                        break;
+					case 4: // Solo regresa al menu inicial.
+						break;
 
 					default: // OPCION INVALIDA
-                        System.out.println(Color.ROJO + "\nEsa opción no es válida\n");
-                        Thread.sleep(1500);
-                        menuUno = 6;
+						System.out.println(Color.ROJO + "\nEsa opción no es válida\n");
+						Thread.sleep(1500);
+						menuUno = 6;
 						break;
 				}
 
@@ -67,20 +67,22 @@ public class EliminarInfo implements OpcionMenu {
 
 	private void eliminarHotel(Scanner sc) throws InterruptedException {
 		Boolean error = false;
-		int idHotel = 0;
 		do {
 			try {
 				System.out.print(Color.AMARILLO + "\nIngresa el ID del elemento que quieres borrar: "
 						+ Color.VERDE);
 				int id = sc.nextInt();
-				
-                /* Aqui nadamas se manda el archivo de donde se va a eliminar y el id del elemento */
+
+				/*
+				 * Aqui nadamas se manda el archivo de donde se va a eliminar y el id del
+				 * elemento
+				 */
 				// eliminaElemento(Hotel.csv, id);
 
 				System.out.println(
 						Color.AZUL + "\nElemento eliminado con exito\n" + Color.BLANCO);
 				Thread.sleep(1500);
-                error = false;
+				error = false;
 			} catch (InputMismatchException ime) {
 				System.out.println(
 						Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);
@@ -93,20 +95,22 @@ public class EliminarInfo implements OpcionMenu {
 
 	private void eliminarHabitacion(Scanner sc) throws InterruptedException {
 		Boolean error = false;
-		int idHotel = 0;
 		do {
 			try {
 				System.out.print(Color.AMARILLO + "\nIngresa el ID del elemento que quieres borrar: "
 						+ Color.VERDE);
 				int id = sc.nextInt();
-				
-                /* Aqui nadamas se manda el archivo de donde se va a eliminar y el id del elemento */
+
+				/*
+				 * Aqui nadamas se manda el archivo de donde se va a eliminar y el id del
+				 * elemento
+				 */
 				// eliminaElemento(Habitacion.csv, id);
 
 				System.out.println(
 						Color.AZUL + "\nElemento eliminado con exito\n" + Color.BLANCO);
 				Thread.sleep(1500);
-                error = false;
+				error = false;
 			} catch (InputMismatchException ime) {
 				System.out.println(
 						Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);
@@ -125,14 +129,17 @@ public class EliminarInfo implements OpcionMenu {
 				System.out.print(Color.AMARILLO + "\nIngresa el ID del elemento que quieres borrar: "
 						+ Color.VERDE);
 				int id = sc.nextInt();
-				
-                /* Aqui nadamas se manda el archivo de donde se va a eliminar y el id del elemento */
+
+				/*
+				 * Aqui nadamas se manda el archivo de donde se va a eliminar y el id del
+				 * elemento
+				 */
 				// eliminaElemento(Huesped.csv, id);
 
 				System.out.println(
 						Color.AZUL + "\nElemento eliminado con exito\n" + Color.BLANCO);
 				Thread.sleep(1500);
-                error = false;
+				error = false;
 			} catch (InputMismatchException ime) {
 				System.out.println(
 						Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);

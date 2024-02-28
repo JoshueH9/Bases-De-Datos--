@@ -31,15 +31,11 @@ import Menu.OpcionMenu;
  * @version 1.0 febrero 2024
  * @since Clase de Bases de datos 2024-2
  */
-public class Main{
+public class Main {
     /* Ruta de carpetas donde se encuentran los archivos .csv */
     public static final String rutaAbsoluta = "SRC/Doc/";
 
-    public static List<Hotel> hotelGlobal;
-    public static List<Huesped> huespedGlobal;    
-    public static List<Habitacion> habitacionGlobal;
-
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args) throws InterruptedException {
 
         CsvFileManager.cargarBaseDeDatos();
 
@@ -103,31 +99,4 @@ public class Main{
         } while (menu != 5);
     }
 
-    public List<Hotel> getListaHotel(List<Hotel> hotelGlobal){
-        return hotelGlobal;
-    }
-
-    public List<Huesped> getListaHuesped( List<Huesped> huespedGlobal){
-        return huespedGlobal;
-    }
-
-    public List<Habitacion> getListaHabitacion(List<Habitacion> habitacionGlobal){
-        return habitacionGlobal;
-    }
-
-    public void setListaHotel(List<Hotel> hotelGlobal){
-        this.hotelGlobal = hotelGlobal;
-    }
-
-    public void setListaHuesped( List<Huesped> huespedGlobal){
-        this.huespedGlobal = huespedGlobal;
-    }
-
-    public void setListaHabitacion(List<Habitacion> habitacionGlobal){
-
-        this.habitacionGlobal = habitacionGlobal;
-    }
-
-    }
-
-
+}

@@ -27,15 +27,15 @@ public class EditarElementos implements OpcionMenu {
 	int idHotel = 1;
 	int idHabitacion = 1;
 	int idHuesped = 1;
-	Hotel hotel1 = new Hotel(idHotel++, "Hotel1", "calle1", null, null, null, null, 0, 0, 0, 0);
-	Hotel hotel2 = new Hotel(idHotel++, null, null, null, null, null, null, 0, 0, 0, 0);
-	Hotel hotel3 = new Hotel(idHotel++, null, null, null, null, null, null, 0, 0, 0, 0);
-	Habitacion habitacion1 = new Habitacion(idHabitacion++, "Habitacion1", idHotel, idHabitacion, true);
-	Habitacion habitacion2 = new Habitacion(idHabitacion++, "Habitacion2", idHotel, idHabitacion, true);
-	Habitacion habitacion3 = new Habitacion(idHabitacion++, "Habitacion3", idHotel, idHabitacion, true);
-	Huesped huesped1 = new Huesped(idHuesped++, "Huesped1", null, null, null, null, null, idHotel, null, idHabitacion);
-	Huesped huesped2 = new Huesped(idHuesped++, "Huesped2", null, null, null, null, null, idHotel, null, idHabitacion);
-	Huesped huesped3 = new Huesped(idHuesped++, "Huesped3", null, null, null, null, null, idHotel, null, idHabitacion);
+	Hotel hotel1 = new Hotel("Hotel1", "calle1", null, null, null, null, 0, 0, 0, 0);
+	Hotel hotel2 = new Hotel(null, null, null, null, null, null, 0, 0, 0, 0);
+	Hotel hotel3 = new Hotel(null, null, null, null, null, null, 0, 0, 0, 0);
+	Habitacion habitacion1 = new Habitacion("Habitacion1", idHotel, idHabitacion, 1);
+	Habitacion habitacion2 = new Habitacion("Habitacion2", idHotel, idHabitacion, 1);
+	Habitacion habitacion3 = new Habitacion("Habitacion3", idHotel, idHabitacion, 1);
+	Huesped huesped1 = new Huesped("Huesped1", null, null, null, null, null, idHotel, null, idHabitacion);
+	Huesped huesped2 = new Huesped("Huesped2", null, null, null, null, null, idHotel, null, idHabitacion);
+	Huesped huesped3 = new Huesped("Huesped3", null, null, null, null, null, idHotel, null, idHabitacion);
 
 	List<Hotel> hoteles = new ArrayList<Hotel>();
 	List<Habitacion> habitaciones = new ArrayList<Habitacion>();

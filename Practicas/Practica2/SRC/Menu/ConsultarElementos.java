@@ -27,13 +27,13 @@ public class ConsultarElementos implements OpcionMenu {
 	int idHotel = 1;
 	int idHabitacion = 1;
 	int idHuesped = 1;
-	
+
 	Hotel hotel1 = new Hotel("Hotel1", "calle1", null, null, null, null, 0, 0, 0, 0);
 	Hotel hotel2 = new Hotel(null, null, null, null, null, null, 0, 0, 0, 0);
 	Hotel hotel3 = new Hotel(null, null, null, null, null, null, 0, 0, 0, 0);
-	Habitacion habitacion1 = new Habitacion("Habitacion1", idHotel, idHabitacion, true);
-	Habitacion habitacion2 = new Habitacion("Habitacion2", idHotel, idHabitacion, true);
-	Habitacion habitacion3 = new Habitacion("Habitacion3", idHotel, idHabitacion, true);
+	Habitacion habitacion1 = new Habitacion("Habitacion1", idHotel, idHabitacion, 1);
+	Habitacion habitacion2 = new Habitacion("Habitacion2", idHotel, idHabitacion, 1);
+	Habitacion habitacion3 = new Habitacion("Habitacion3", idHotel, idHabitacion, 1);
 	Huesped huesped1 = new Huesped("Huesped1", null, null, null, null, null, idHotel, null, idHabitacion);
 	Huesped huesped2 = new Huesped("Huesped2", null, null, null, null, null, idHotel, null, idHabitacion);
 	Huesped huesped3 = new Huesped("Huesped3", null, null, null, null, null, idHotel, null, idHabitacion);
@@ -189,7 +189,7 @@ public class ConsultarElementos implements OpcionMenu {
 							Color.AZUL + "\nCosto por noche de la habitacion: "
 									+ Color.BLANCO + habitacionConsultada.getCostoPorNoche());
 					System.out.println(Color.AZUL + "\nDisponibilidad de la habitacion: "
-							+ (habitacionConsultada.isDisponible() ? "DISPONIBLE" : "NO DISPONIBLE"));
+							+ ((habitacionConsultada.isDisponible() > 0) ? "DISPONIBLE" : "NO DISPONIBLE"));
 					Thread.sleep(1500);
 				} else {
 					throw new IllegalStateException();

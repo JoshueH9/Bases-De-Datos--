@@ -5,7 +5,6 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-
 import Entidades.Hotel;
 import Entidades.Huesped;
 import Entidades.Habitacion;
@@ -65,7 +64,6 @@ public class AgregarElementos implements OpcionMenu {
 
 	private void agregarHotel(Scanner sc) throws InterruptedException {
 		Boolean error = false;
-		int idHotel = 0;
 		do {
 			try {
 
@@ -120,11 +118,11 @@ public class AgregarElementos implements OpcionMenu {
 				Hotel hotel = new Hotel(nombre, calle, numeroInterior, numeroExterior, colonia, estado,
 						telefono, numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
 
-				//List<Hotel> hoteles = new ArrayList<>();
+				// List<Hotel> hoteles = new ArrayList<>();
 
-				//hoteles.add(hotel); 
+				// hoteles.add(hotel);
 
-				//agregaDato(hotel);
+				// agregaDato(hotel);
 				/*
 				 * El algo puede ser una lista abstracta
 				 * lista de Strings (Hay que convertir los int a string)
@@ -148,7 +146,7 @@ public class AgregarElementos implements OpcionMenu {
 
 	private void agregarHabitacion(Scanner sc) throws InterruptedException {
 		Boolean error = false;
-		int idHabitacion = 0;
+
 		do {
 			try {
 				System.out.print(Color.AMARILLO
@@ -166,7 +164,7 @@ public class AgregarElementos implements OpcionMenu {
 				 * public Habitacion(int numHabitacion, String nombreTipo, int numCamas, int
 				 * costoPorNoche, boolean disponible) {
 				 */
-				Habitacion habitacion = new Habitacion(idHabitacion++, nombreTipo, numCamas, costoNoche, true);
+				Habitacion habitacion = new Habitacion(nombreTipo, numCamas, costoNoche, 1);
 
 				List<Habitacion> habitaciones = new ArrayList<>();
 
@@ -223,7 +221,7 @@ public class AgregarElementos implements OpcionMenu {
 				 * apellidoMaterno, String nacionalidad,String fechaNacimiento, String genero,
 				 * int numeroMembresia, List<String> correo, List<Integer> telefono)
 				 */
-				Huesped huesped = new Huesped(idHuesped++, nombreHuesped, apellidoPaterno, apellidoMaterno,
+				Huesped huesped = new Huesped(nombreHuesped, apellidoPaterno, apellidoMaterno,
 						nacionalidad,
 						fechaNacimiento, genero, numeroMembresia, correo, telefono);
 				List<Huesped> huespedes = new ArrayList<>();
