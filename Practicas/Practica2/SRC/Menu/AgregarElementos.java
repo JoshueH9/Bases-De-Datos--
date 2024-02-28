@@ -44,7 +44,7 @@ public class AgregarElementos implements OpcionMenu {
                 huesped.getFechaNacimiento() + "," +
                 huesped.getGenero() + "," +
                 huesped.getNumeroMembresia() + "," +
-                huesped.getCorreo() + "," +
+                huesped.getCorreos() + "," +
                 huesped.getTelefonos();
 	}
 
