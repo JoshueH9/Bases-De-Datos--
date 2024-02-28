@@ -31,42 +31,15 @@ import Menu.OpcionMenu;
  * @version 1.0 febrero 2024
  * @since Clase de Bases de datos 2024-2
  */
-public class Main {
-    // <<<<<<< HEAD
-
+public class Main{
     /* Ruta de carpetas donde se encuentran los archivos .csv */
     public static final String rutaAbsoluta = "SRC/Doc/";
 
-    public static <T> void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException{
+        menu();
+    }
 
-        /* Aqui inician las pruebas de Alessandro */
-        List<Hotel> hoteles = new ArrayList<>();
-
-        // Realizar operaciones (ejemplo)
-
-        /* Aqui terminan las pruebas de alessandro */
-
-        // Descomentar lo siguiente si se quiere hacer pruebas
-
-        // CsvFileManager file = new CsvFileManager();
-        // List<T> a = new ArrayList<>();
-
-        // String[] xd = {"a","b","d"};
-
-        // CsvFileManager.guardarCSV(rutaAbsoluta+"Huesped.csv", a);
-        // CsvFileManager.agregarDato(rutaAbsoluta+"Huesped.csv", xd);
-
-        /*
-         * AQUI SE MANDA A LLAMAR EL MENU, DESCOMENTAR SI SE QUIERE UTILIZAR O PROBAR
-         * COSAS
-         */
-
-        // menu();
-
-        // =======
-
-        // >>>>>>> 933b2ddb80b828fbc392fb3186ca3b4d6da53cff
-
+    public static void menu() throws InterruptedException{
         Scanner sc = new Scanner(System.in);
         int menu = 0;
 
@@ -126,5 +99,7 @@ public class Main {
             }
         } while (menu != 5);
     }
-
 }
+
+
+

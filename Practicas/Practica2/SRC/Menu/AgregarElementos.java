@@ -119,11 +119,11 @@ public class AgregarElementos implements OpcionMenu {
 						telefono,
 						numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
 
-				List<Hotel> hoteles = new ArrayList<>();
+				//List<Hotel> hoteles = new ArrayList<>();
 
-				hoteles.add(hotel); // calle,numInteior,etc.
+				//hoteles.add(hotel); 
 
-				// agregaDato(algo);
+				//agregaDato(hotel);
 				/*
 				 * El algo puede ser una lista abstracta
 				 * lista de Strings (Hay que convertir los int a string)
@@ -144,6 +144,7 @@ public class AgregarElementos implements OpcionMenu {
 			}
 		} while (error);
 	}
+
 
 	private void agregarHabitacion(Scanner sc) throws InterruptedException {
 		Boolean error = false;
