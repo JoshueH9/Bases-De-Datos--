@@ -263,48 +263,16 @@ public class CsvFileManager {
 		List<Huesped> huespedes = Listas.getListaHuesped();
 
 		// Exportar hoteles
-		exportarEntidades("Practicas/Practica2/SRC/Doc/Habitacion.csv", hoteles, CsvFileManager::convertHotel);
+		exportarEntidades("Practicas/Practica2/SRC/Doc/Hotel.csv", hoteles, CsvFileManager::convertHotel);
 
 		// Exportar habitaciones
-		exportarEntidades("Practicas/Practica2/SRC/Doc/Hotel.csv", habitaciones, CsvFileManager::convertHabitacion);
+		exportarEntidades("Practicas/Practica2/SRC/Doc/Habitacion.csv", habitaciones,
+				CsvFileManager::convertHabitacion);
 
 		// Exportar huéspedes
 		exportarEntidades("Practicas/Practica2/SRC/Doc/Huesped.csv", huespedes, CsvFileManager::convertHuesped);
-		System.out.println("Hola mundo");
 	}
 
-	/*
-	 * List<Hotel> hoteles = Listas.getListaHotel();
-	 * List<Habitacion> habitaciones = Listas.getListaHabitacion();
-	 * List<Huesped> huespedes = Listas.getListaHuesped();
-	 * 
-	 * try(
-	 * BufferedWriter bufferedWriter = new BufferedWriter(new
-	 * FileWriter("SRC/Doc/Huesped.csv")))
-	 * {
-	 * List<String> hotelesString = new ArrayList<>();
-	 * for (Hotel hotel : hoteles)
-	 * hotelesString.add(convertHotel(hotel));
-	 * 
-	 * for (String cadena : hotelesString) {
-	 * String[] palabras = cadena.split(",");
-	 * for (String palabra : palabras) {
-	 * bufferedWriter.write(palabra);
-	 * bufferedWriter.write(",");
-	 * }
-	 * bufferedWriter.newLine();
-	 * }
-	 * }catch(
-	 * IOException e)
-	 * {
-	 * e.printStackTrace();
-	 * }
-	 * 
-	 * /*
-	 * Cuando se logre hacer para hoteles, hacer copia y pega para ajustar con
-	 * cliente y habitacion en este mismo método
-	 * 
-	 */
 	private static <T> void exportarEntidades(String nombreArchivo, List<T> entidades,
 			Function<T, String> convertidor) {
 		try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(nombreArchivo))) {
