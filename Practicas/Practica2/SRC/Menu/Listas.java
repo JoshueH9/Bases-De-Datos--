@@ -1,4 +1,5 @@
 package Menu;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,9 +8,9 @@ import Entidades.Hotel;
 import Entidades.Huesped;
 
 public class Listas {
-	public static List<Hotel> hotelGlobal;
-	public static List<Huesped> huespedGlobal;
-	public static List<Habitacion> habitacionGlobal;
+	private static List<Hotel> hotelGlobal;
+	private static List<Huesped> huespedGlobal;
+	private static List<Habitacion> habitacionGlobal;
 
 	public static List<Hotel> getListaHotel() {
 		return hotelGlobal;

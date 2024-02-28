@@ -91,7 +91,7 @@ public class AgregarElementos implements OpcionMenu {
 						+ Color.VERDE);
 				String estado = sc.next();
 				System.out.print(Color.AMARILLO + "\nIngresa el telefono del hotel: "
-								+ Color.VERDE);
+						+ Color.VERDE);
 				int telefono = sc.nextInt();
 				System.out.print(Color.AMARILLO
 						+ "\nIngresa el numero de habitaciones totales del hotel: "
@@ -112,12 +112,12 @@ public class AgregarElementos implements OpcionMenu {
 				 * List<Integer> telefono, int numHabitaciones, int
 				 * numHabitacionesDisponibles,int numHabitacionesOcupadas)
 				 */
-				
-				  Hotel hotel = new Hotel(nombre, calle, numeroInterior, numeroExterior, colonia, estado,
+
+				Hotel hotel = new Hotel(nombre, calle, numeroInterior, numeroExterior, colonia, estado,
 						telefono, numHabitaciones, numHabitacionesDisponibles, numHabitacionesOcupadas);
 
 				List<Hotel> hoteles = Listas.getListaHotel();
-				hoteles.add(hotel); 
+				hoteles.add(hotel);
 				Listas.setListaHotel(hoteles);
 
 				error = false;
@@ -157,9 +157,9 @@ public class AgregarElementos implements OpcionMenu {
 				Habitacion habitacion = new Habitacion(nombreTipo, numCamas, costoNoche, 1);
 
 				List<Habitacion> habitaciones = Listas.getListaHabitacion();
-				habitaciones.add(habitacion); 
+				habitaciones.add(habitacion);
 				Listas.setListaHabitacion(habitaciones);
-				
+
 				error = false;
 				System.out.println(
 						Color.AZUL + "\nHabitacion ingresada con exito\n" + Color.BLANCO);
@@ -176,7 +176,6 @@ public class AgregarElementos implements OpcionMenu {
 
 	private void agregarHuesped(Scanner sc) throws InterruptedException {
 		Boolean error = false;
-		int idHuesped = 0;
 		do {
 			try {
 				System.out.print(Color.AMARILLO
@@ -217,7 +216,7 @@ public class AgregarElementos implements OpcionMenu {
 						nacionalidad, fechaNacimiento, genero, numeroMembresia, correo, telefono);
 
 				List<Huesped> huespedes = Listas.getListaHuesped();
-				huespedes.add(huesped); 
+				huespedes.add(huesped);
 				Listas.setListaHuesped(huespedes);
 
 				error = false;

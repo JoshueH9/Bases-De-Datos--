@@ -21,11 +21,6 @@ import Entidades.Habitacion;
  * @since Clase de Bases de datos 2024-2
  */
 public class EditarElementos implements OpcionMenu {
-
-	int idHotel = 1;
-	int idHabitacion = 1;
-	int idHuesped = 1;
-
 	List<Hotel> hoteles = Listas.getListaHotel();
 	List<Habitacion> habitaciones = Listas.getListaHabitacion();
 	List<Huesped> huespedes = Listas.getListaHuesped();
@@ -47,7 +42,7 @@ public class EditarElementos implements OpcionMenu {
 
 				switch (menuUno) {
 					case 1: // Hotel
-						
+
 						pedirIdHotel(sc, hoteles);
 						break;
 
@@ -192,7 +187,7 @@ public class EditarElementos implements OpcionMenu {
 						String nombre = sc.next();
 						hotel.setNombreEstablecimiento(nombre);
 						System.out.println(
-							Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
@@ -205,7 +200,7 @@ public class EditarElementos implements OpcionMenu {
 						String calle = sc.next();
 						hotel.setCalle(calle);
 						System.out.println(
-							Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
@@ -218,7 +213,7 @@ public class EditarElementos implements OpcionMenu {
 						String numeroInterior = sc.next();
 						hotel.setNumeroInterior(numeroInterior);
 						System.out.println(
-							Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
@@ -231,7 +226,7 @@ public class EditarElementos implements OpcionMenu {
 						String numeroExterior = sc.next();
 						hotel.setNumeroExterior(numeroExterior);
 						System.out.println(
-							Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
@@ -244,7 +239,7 @@ public class EditarElementos implements OpcionMenu {
 						String colonia = sc.next();
 						hotel.setColonia(colonia);
 						System.out.println(
-							Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
@@ -257,7 +252,7 @@ public class EditarElementos implements OpcionMenu {
 						String estado = sc.next();
 						hotel.setEstado(estado);
 						System.out.println(
-							Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
@@ -270,7 +265,7 @@ public class EditarElementos implements OpcionMenu {
 						int telefono = sc.nextInt();
 						hotel.setTelefonos(telefono);
 						System.out.println(
-							Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
@@ -283,7 +278,7 @@ public class EditarElementos implements OpcionMenu {
 						int numeroHabitaciones = sc.nextInt();
 						hotel.setNumHabitaciones(numeroHabitaciones);
 						System.out.println(
-							Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
@@ -298,7 +293,7 @@ public class EditarElementos implements OpcionMenu {
 						int numeroHabitacionesDisponibles = sc.nextInt();
 						hotel.setNumHabitacionesDisponibles(numeroHabitacionesDisponibles);
 						System.out.println(
-							Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
@@ -313,7 +308,7 @@ public class EditarElementos implements OpcionMenu {
 						int numeroHabitacionesOcupadas = sc.nextInt();
 						hotel.setNumHabitacionesOcupadas(numeroHabitacionesOcupadas);
 						System.out.println(
-							Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHotel editado con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
@@ -359,7 +354,7 @@ public class EditarElementos implements OpcionMenu {
 						String nombre = sc.next();
 						habitacion.setNombreTipo(nombre);
 						System.out.println(
-							Color.AZUL + "\nHabitacion editada con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHabitacion editada con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
@@ -372,7 +367,7 @@ public class EditarElementos implements OpcionMenu {
 						int costoNoche = sc.nextInt();
 						habitacion.setCostoPorNoche(costoNoche);
 						System.out.println(
-							Color.AZUL + "\nHabitacion editada con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHabitacion editada con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
@@ -385,7 +380,7 @@ public class EditarElementos implements OpcionMenu {
 						int numeroCamas = sc.nextInt();
 						habitacion.setNumCamas(numeroCamas);
 						System.out.println(
-							Color.AZUL + "\nHabitacion editada con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHabitacion editada con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
@@ -403,14 +398,14 @@ public class EditarElementos implements OpcionMenu {
 							habitacion.setNumCamas(0);
 						}
 						System.out.println(
-							Color.AZUL + "\nHabitacion editada con exito\n" + Color.BLANCO);
+								Color.AZUL + "\nHabitacion editada con exito\n" + Color.BLANCO);
 						Thread.sleep(1000);
 						error = false;
 						break;
 
-						case 5:
-							error = false;
-							break;
+					case 5:
+						error = false;
+						break;
 
 					default:
 						System.out.println(Color.ROJO + "\nERROR: Ingresa un numero. del 1 al 5\n" + Color.BLANCO);
@@ -501,7 +496,6 @@ public class EditarElementos implements OpcionMenu {
 						error = false;
 						break;
 
-
 					case 5:
 						System.out.println(Color.AZUL + "\nFecha de nacimiento actual del huesped: " + Color.BLANCO
 								+ huesped.getFechaNacimiento());
@@ -525,7 +519,7 @@ public class EditarElementos implements OpcionMenu {
 						System.out.println(
 								Color.AZUL + "\nHabitacion editada con exito\n" + Color.BLANCO);
 						Thread.sleep(1500);
-						error = false;						
+						error = false;
 						break;
 
 					case 7:
@@ -576,7 +570,6 @@ public class EditarElementos implements OpcionMenu {
 						Thread.sleep(1500);
 						break;
 				}
-				
 
 			} catch (InputMismatchException ime) {
 				System.out.println(Color.ROJO + "\nERROR: Ingresa un numero.\n" + Color.BLANCO);
