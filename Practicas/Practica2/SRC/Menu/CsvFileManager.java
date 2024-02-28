@@ -177,9 +177,9 @@ public class CsvFileManager {
 				// Verificar si el arreglo tiene al menos 10 elementos antes de intentar
 				// convertir a entero
 				if (arreglo.length >= 10) {
-					hotel.add(new Hotel(arreglo[0], arreglo[1], arreglo[2], arreglo[3], arreglo[4], arreglo[5],
-							Integer.parseInt(arreglo[6]), Integer.parseInt(arreglo[7]), Integer.parseInt(arreglo[8]),
-							Integer.parseInt(arreglo[9])));
+					hotel.add(new Hotel(arreglo[1], arreglo[2], arreglo[3], arreglo[4], arreglo[5],
+							arreglo[6], Integer.parseInt(arreglo[7]), Integer.parseInt(arreglo[8]),
+							Integer.parseInt(arreglo[9]), Integer.parseInt(arreglo[10])));
 				} else {
 					// Manejar el caso donde el arreglo no tiene suficientes elementos
 					System.out.println("Error: Hotel con formato incorrecto en la línea: " + linea);

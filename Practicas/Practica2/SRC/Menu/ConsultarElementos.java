@@ -21,7 +21,7 @@ import Entidades.Habitacion;
  * @since Clase de Bases de datos 2024-2
  */
 public class ConsultarElementos implements OpcionMenu {
-	
+
 	List<Hotel> hoteles = Listas.getListaHotel();
 	List<Habitacion> habitaciones = Listas.getListaHabitacion();
 	List<Huesped> huespedes = Listas.getListaHuesped();
@@ -76,7 +76,6 @@ public class ConsultarElementos implements OpcionMenu {
 				System.out.print(Color.AMARILLO + "\nIngresa el id del hotel: "
 						+ Color.VERDE);
 				int idHotel = sc.nextInt();
-
 				Optional<Hotel> hotelEncontrado = hoteles.stream()
 						.filter(hotel -> hotel.getIdHotel() == idHotel)
 						.findFirst();
@@ -117,7 +116,7 @@ public class ConsultarElementos implements OpcionMenu {
 
 					System.out.print(Color.AZUL
 							+ "\nNumero de habitaciones ocupadas del hotel: "
-							+ Color.BLANCO + hotelConsultado.getNumHabitacionesOcupadas()+"\n");
+							+ Color.BLANCO + hotelConsultado.getNumHabitacionesOcupadas() + "\n");
 					Thread.sleep(1500);
 					error = false;
 				} else {
@@ -129,7 +128,7 @@ public class ConsultarElementos implements OpcionMenu {
 				Thread.sleep(1500);
 				error = true;
 				sc.nextLine();
-			} catch (IllegalStateException ise){
+			} catch (IllegalStateException ise) {
 				System.out.println(Color.ROJO + "\nERROR: No se encontró ningún hotel con el ID proporcionado.\n"
 						+ Color.BLANCO);
 				Thread.sleep(1500);
@@ -169,7 +168,7 @@ public class ConsultarElementos implements OpcionMenu {
 							Color.AZUL + "\nCosto por noche de la habitacion: "
 									+ Color.BLANCO + habitacionConsultada.getCostoPorNoche());
 					System.out.println(Color.AZUL + "\nDisponibilidad de la habitacion: "
-							+ ((habitacionConsultada.isDisponible() > 0) ? "DISPONIBLE" : "NO DISPONIBLE")+"\n");
+							+ ((habitacionConsultada.isDisponible() > 0) ? "DISPONIBLE" : "NO DISPONIBLE") + "\n");
 					Thread.sleep(1500);
 					error = false;
 				} else {
@@ -181,7 +180,7 @@ public class ConsultarElementos implements OpcionMenu {
 				Thread.sleep(1500);
 				error = true;
 				sc.nextLine();
-			} catch (IllegalStateException ise){
+			} catch (IllegalStateException ise) {
 				System.out.println(Color.ROJO + "\nERROR: No se encontró ningún hotel con el ID proporcionado.\n"
 						+ Color.BLANCO);
 				Thread.sleep(1500);
@@ -230,7 +229,7 @@ public class ConsultarElementos implements OpcionMenu {
 									+ Color.BLANCO + huespedConsultado.getCorreos());
 					System.out.print(
 							Color.AZUL + "\nTelefono del huesped: "
-									+ Color.BLANCO + huespedConsultado.getTelefonos()+"\n");
+									+ Color.BLANCO + huespedConsultado.getTelefonos() + "\n");
 					Thread.sleep(1500);
 					error = false;
 				} else {
@@ -242,7 +241,7 @@ public class ConsultarElementos implements OpcionMenu {
 				Thread.sleep(1500);
 				error = true;
 				sc.nextLine();
-			} catch (IllegalStateException ise){
+			} catch (IllegalStateException ise) {
 				System.out.println(Color.ROJO + "\nERROR: No se encontró ningún hotel con el ID proporcionado.\n"
 						+ Color.BLANCO);
 				Thread.sleep(1500);
